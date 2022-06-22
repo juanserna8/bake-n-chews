@@ -1,9 +1,12 @@
-# Production context: all deploys from the Production branch 
-# set in your site’s Branches settings in the UI will inherit 
-# these settings. You can define environment variables 
-# here but we recommend using the Netlify UI for sensitive
-# values to keep them out of your source repository. 
+# Commands for deploying different environments
+# Based on the commands that we specified in package.json
+# For this project, we have 3 environments, each one has its own build command
+# So, in this file, we need to add the [context.environment]
+# And for each environment, match the commando to build it when deploying
+
 [context.dev]
-#  publish = "output/"
   command = "npm run build"
-#  environment = { NODE_VERSION = "14.15.3" }
+[context.staging]
+  command = "npm run build-staging"
+[context.production]
+  command = "npm run build-production"
