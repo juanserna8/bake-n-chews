@@ -3,7 +3,7 @@
 # these settings. You can define environment variables 
 # here but we recommend using the Netlify UI for sensitive
 # values to keep them out of your source repository. 
-[context.production]
+[context.dev]
 #  publish = "output/"
   command = "npm run build"
 #  environment = { NODE_VERSION = "14.15.3" }
