@@ -11,6 +11,7 @@ function HeroHome() {
 
   useEffect(() => {
     console.log('****Prueba', import.meta.env);
+    console.log('****Trial', import.meta.env.VITE_HELLO);
   })
 
   //
