@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from '../utils/Modal';
 
 import MockupImage from '../images/mockup-image-01.jpg';
