@@ -2,7 +2,8 @@
   "name": "appy-react",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite serve",
+    "staging": "vite serve --mode staging",
     "build": "vite build",
     "preview": "vite preview"
   },
