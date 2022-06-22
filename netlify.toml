@@ -1,0 +1,12 @@
+# Commands for deploying different environments
+# Based on the commands that we specified in package.json
+# For this project, we have 3 environments, each one has its own build command
+# So, in this file, we need to add the [context.environment]
+# And for each environment, match the commando to build it when deploying
+
+[context.dev]
+  command = "npm run build"
+[context.staging]
+  command = "npm run build-staging"
+[context.production]
+  command = "npm run build-production"
