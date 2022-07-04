@@ -1,0 +1,12 @@
+{
+    "name": "Genovese",
+    "description": "Tres leches cake",
+    "options": [
+        {
+            "size": "Medium",
+            "people": "10 - 12 people",
+            "price": 55,
+            "image": "url"
+        }
+    ]
+}
