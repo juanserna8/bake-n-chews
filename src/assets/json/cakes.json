@@ -29,12 +29,12 @@
                 {
                     "size": "Medium",
                     "people": "10 - 12 people",
-                    "price": 55
+                    "price": 43
                 },
                 {
                     "size": "Big",
                     "people": "18 - 20 people",
-                    "price": 70
+                    "price": 60
                 }
             ]
     }
