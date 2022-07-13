@@ -8,7 +8,7 @@ const CakeCard = ({cake}) => {
     }, [cakePrice]);
 
     return (
-        <div className='my-4'>
+        <div className=''>
             <figure className='relative h-0 mb-4 pb-9/16'>
                 <img 
                     className='absolute inset-0 w-full h-full object-cover' 
