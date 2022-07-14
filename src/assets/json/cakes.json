@@ -1,12 +1,41 @@
-{
-    "name": "Genovese",
-    "description": "Tres leches cake",
-    "options": [
-        {
-            "size": "Medium",
-            "people": "10 - 12 people",
-            "price": 55,
-            "image": "url"
-        }
-    ]
-}
+
+[
+    {
+        "name": "Genovese",
+        "id": 1,
+        "description": "Tres leches cake",
+        "image": "/images/cake.jpg",
+        "options":
+            [
+                {
+                    "size": "Medium",
+                    "people": "10 - 12 people",
+                    "price": 55
+                },
+                {
+                    "size": "Big",
+                    "people": "18 - 20 people",
+                    "price": 70
+                }
+            ]
+    },
+    {
+        "name": "Genovese2",
+        "id": 2,
+        "description": "Tres leches cake",
+        "image": "/images/cake.jpg",
+        "options":
+            [
+                {
+                    "size": "Medium",
+                    "people": "10 - 12 people",
+                    "price": 43
+                },
+                {
+                    "size": "Big",
+                    "people": "18 - 20 people",
+                    "price": 60
+                }
+            ]
+    }
+]
