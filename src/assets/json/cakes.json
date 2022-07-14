@@ -4,7 +4,7 @@
         "name": "Genovese",
         "id": 1,
         "description": "Tres leches cake",
-        "image": "./images/cake.jpg",
+        "image": "/images/cake.jpg",
         "options":
             [
                 {
@@ -23,7 +23,7 @@
         "name": "Genovese2",
         "id": 2,
         "description": "Tres leches cake",
-        "image": "./images/cake.jpg",
+        "image": "/images/cake.jpg",
         "options":
             [
                 {
