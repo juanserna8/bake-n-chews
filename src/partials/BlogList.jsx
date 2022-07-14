@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import cakes from '../assets/json/cakes.json'
 import NewsImage01 from '../images/news-01.jpg';
 import NewsImage02 from '../images/news-02.jpg';
 import NewsImage03 from '../images/news-03.jpg';
@@ -12,8 +13,10 @@ import NewsAuthor03 from '../images/news-author-03.jpg';
 import NewsAuthor04 from '../images/news-author-04.jpg';
 import NewsAuthor05 from '../images/news-author-05.jpg';
 import NewsAuthor06 from '../images/news-author-06.jpg';
+import CakeCard from './CakeCard';
 
 function BlogList() {
+  
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -24,7 +27,7 @@ function BlogList() {
             <div className="lg:grow" data-aos="fade-down" data-aos-delay="200">
 
               {/* Section title */}
-              <h4 className="h3 font-red-hat-display mb-8">Latest</h4>
+              <h4 className="h3 font-red-hat-display mb-8">Cakes</h4>
 
               {/* Articles container */}
               <div className="grid gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8 items-start">
@@ -32,6 +35,15 @@ function BlogList() {
                 {/* 1st article */}
                 <article className="flex flex-col h-full">
                   <header>
+                    {
+                      cakes && cakes.map((cake, index) => {
+                        return(
+                          <div key={index}>
+                            <CakeCard key={index} cake={cake} />
+                          </div>
+                        )
+                      })
+                    }
                     <Link className="block mb-4" to="/blog-post">
                       <figure className="relative h-0 pb-9/16">
                         <img className="absolute inset-0 w-full h-full object-cover" src={NewsImage01} width="352" height="198" alt="News 01" />
