@@ -8,6 +8,11 @@
         "options":
             [
                 {
+                    "size": "Small",
+                    "people": "5 - 7 people",
+                    "price": 30
+                },
+                {
                     "size": "Medium",
                     "people": "10 - 12 people",
                     "price": 55
@@ -26,6 +31,107 @@
         "image": "/images/cake.jpg",
         "options":
             [
+                {
+                    "size": "Small",
+                    "people": "5 - 7 people",
+                    "price": 25
+                },
+                {
+                    "size": "Medium",
+                    "people": "10 - 12 people",
+                    "price": 43
+                },
+                {
+                    "size": "Big",
+                    "people": "18 - 20 people",
+                    "price": 60
+                }
+            ]
+    },
+    {
+        "name": "Genovese3",
+        "id": 3,
+        "description": "Tres leches cake",
+        "image": "/images/cake.jpg",
+        "options":
+            [
+                {
+                    "size": "Small",
+                    "people": "5 - 7 people",
+                    "price": 25
+                },
+                {
+                    "size": "Medium",
+                    "people": "10 - 12 people",
+                    "price": 43
+                },
+                {
+                    "size": "Big",
+                    "people": "18 - 20 people",
+                    "price": 60
+                }
+            ]
+    },
+    {
+        "name": "Genovese4",
+        "id": 4,
+        "description": "Tres leches cake",
+        "image": "/images/cake.jpg",
+        "options":
+            [
+                {
+                    "size": "Small",
+                    "people": "5 - 7 people",
+                    "price": 25
+                },
+                {
+                    "size": "Medium",
+                    "people": "10 - 12 people",
+                    "price": 43
+                },
+                {
+                    "size": "Big",
+                    "people": "18 - 20 people",
+                    "price": 60
+                }
+            ]
+    },
+    {
+        "name": "Genovese5",
+        "id": 5,
+        "description": "Tres leches cake",
+        "image": "/images/cake.jpg",
+        "options":
+            [
+                {
+                    "size": "Small",
+                    "people": "5 - 7 people",
+                    "price": 25
+                },
+                {
+                    "size": "Medium",
+                    "people": "10 - 12 people",
+                    "price": 43
+                },
+                {
+                    "size": "Big",
+                    "people": "18 - 20 people",
+                    "price": 60
+                }
+            ]
+    },
+    {
+        "name": "Genovese6",
+        "id": 6,
+        "description": "Tres leches cake",
+        "image": "/images/cake.jpg",
+        "options":
+            [
+                {
+                    "size": "Small",
+                    "people": "5 - 7 people",
+                    "price": 25
+                },
                 {
                     "size": "Medium",
                     "people": "10 - 12 people",

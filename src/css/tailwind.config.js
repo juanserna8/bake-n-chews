@@ -72,6 +72,9 @@ module.exports = {
         },
         brown: {
           100: '#3D2813'
+        },
+        redComplementary: {
+          100: '#BA3A40'
         }
       },
       outline: {
