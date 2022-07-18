@@ -30,21 +30,21 @@ function BlogList() {
               <h4 className="h3 font-red-hat-display mb-8">Cakes</h4>
 
               {/* Articles container */}
-              <div className="grid gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8 items-start">
+              <div className="">
 
                 {/* 1st article */}
-                <article className="flex flex-col h-full">
+                
                   <header>
                     {
                       cakes && cakes.map((cake, index) => {
                         return(
-                          <div key={index}>
-                            <CakeCard key={index} cake={cake} />
+                          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 sm:mx-auto" key={index}>
+                            <CakeCard key={index} cake={cake} className="" />
                           </div>
                         )
                       })
                     }
-                    <Link className="block mb-4" to="/blog-post">
+                    {/* {<Link className="block mb-4" to="/blog-post">
                       <figure className="relative h-0 pb-9/16">
                         <img className="absolute inset-0 w-full h-full object-cover" src={NewsImage01} width="352" height="198" alt="News 01" />
                       </figure>
@@ -53,9 +53,9 @@ function BlogList() {
                       <h3 className="h4 font-red-hat-display mb-2">
                         How to create a profile page using Appy
                       </h3>
-                    </Link>
+                    </Link>} */}
                   </header>
-                  <p className="text-gray-600 dark:text-gray-400 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  {/* {<p className="text-gray-600 dark:text-gray-400 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   <footer className="flex items-center mt-4">
                     <a href="#0">
                       <img className="rounded-full shrink-0 mr-3" src={NewsAuthor03} width="32" height="32" alt="Author 03" />
@@ -63,11 +63,12 @@ function BlogList() {
                     <div className="text-sm text-gray-500">
                       By <a className="font-medium text-gray-800 dark:text-gray-400 hover:underline" href="#0">Lisa Allison</a> · <span className="text-gray-500">Oct 22, 2020</span>
                     </div>
-                  </footer>
-                </article>
+                  </footer>} */}
+                
+
 
                 {/* 2nd article */}
-                <article className="flex flex-col h-full">
+                {/* {<article className="flex flex-col h-full">
                   <header>
                     <Link className="block mb-4" to="/blog-post">
                       <figure className="relative h-0 pb-9/16">
@@ -89,10 +90,10 @@ function BlogList() {
                       By <a className="font-medium text-gray-800 dark:text-gray-400 hover:underline" href="#0">Greg Gilev</a> · <span className="text-gray-500">Oct 22, 2020</span>
                     </div>
                   </footer>
-                </article>
+                </article>} */}
 
                 {/* 3rd article */}
-                <article className="flex flex-col h-full">
+                {/* {<article className="flex flex-col h-full">
                   <header>
                     <Link className="block mb-4" to="/blog-post">
                       <figure className="relative h-0 pb-9/16">
@@ -114,10 +115,10 @@ function BlogList() {
                       By <a className="font-medium text-gray-800 dark:text-gray-400 hover:underline" href="#0">Mark Varsano</a> · <span className="text-gray-500">Oct 22, 2020</span>
                     </div>
                   </footer>
-                </article>
+                </article>} */}
 
                 {/* 4th article */}
-                <article className="flex flex-col h-full">
+                {/* {<article className="flex flex-col h-full">
                   <header>
                     <Link className="block mb-4" to="/blog-post">
                       <figure className="relative h-0 pb-9/16">
@@ -139,10 +140,10 @@ function BlogList() {
                       By <a className="font-medium text-gray-800 dark:text-gray-400 hover:underline" href="#0">Lisa Allison</a> · <span className="text-gray-500">Oct 22, 2020</span>
                     </div>
                   </footer>
-                </article>
+                </article>} */}
 
                 {/* 5th article */}
-                <article className="flex flex-col h-full">
+                {/* {<article className="flex flex-col h-full">
                   <header>
                     <Link className="block mb-4" to="/blog-post">
                       <figure className="relative h-0 pb-9/16">
@@ -164,10 +165,10 @@ function BlogList() {
                       By <a className="font-medium text-gray-800 dark:text-gray-400 hover:underline" href="#0">Mary Champ</a> · <span className="text-gray-500">Oct 22, 2020</span>
                     </div>
                   </footer>
-                </article>
+                </article>} */}
 
                 {/* 6th article */}
-                <article className="flex flex-col h-full">
+                {/* {<article className="flex flex-col h-full">
                   <header>
                     <Link className="block mb-4" to="/blog-post">
                       <figure className="relative h-0 pb-9/16">
@@ -189,7 +190,7 @@ function BlogList() {
                       By <a className="font-medium text-gray-800 dark:text-gray-400 hover:underline" href="#0">Yuri Lapko</a> · <span className="text-gray-500">Oct 22, 2020</span>
                     </div>
                   </footer>
-                </article>
+                </article>} */}
 
               </div>
 
