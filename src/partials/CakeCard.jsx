@@ -36,7 +36,7 @@ const CakeCard = ({cake}) => {
                         return (
                             <div key={index} className='flex justify-start items-center my-2'>
                                 <button 
-                                    className={index == selected ? 'btn-sm text-white bg-blue-200' : 'btn-sm text-white bg-teal-500 hover:bg-teal-400'}
+                                    className={index == selected ? 'btn-sm text-white bg-redComplementary-100' : 'btn-sm text-white bg-teal-500 hover:bg-teal-400'}
                                     onClick={() => handleClick(index, cakeOption.price)}  
                                 >
                                     {`${cakeOption.size} ${cakeOption.people}`}
