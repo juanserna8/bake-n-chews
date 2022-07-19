@@ -9,7 +9,7 @@ function HeroHome() {
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
-  console.log('***Prueba', import.meta.env)
+  console.log('***Production', import.meta.env)
 
   return (
     <section>
