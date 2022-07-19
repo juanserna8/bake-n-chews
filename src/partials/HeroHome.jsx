@@ -9,12 +9,8 @@ function HeroHome() {
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
-  useEffect(() => {
-    console.log('****Prueba', import.meta.env);
-    console.log('****Trial', import.meta.env.VITE_HELLO);
-  })
+  console.log('***Production', import.meta.env)
 
-  //
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
