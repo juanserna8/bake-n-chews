@@ -4,7 +4,7 @@ import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Footer from '../partials/Footer';
 
-function Contact() {
+function Checkout() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -25,8 +25,8 @@ function Contact() {
 
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1 font-red-hat-display mb-4">Get started with Appy in seconds</h1>
-                <p className="text-xl text-gray-600 dark:text-gray-400">We'll send you a text with a link to download the app.</p>
+                <h1 className="h1 font-red-hat-display mb-4">Your cart</h1>
+                {/* {<p className="text-xl text-gray-600 dark:text-gray-400">We'll send you a text with a link to download the app.</p>} */}
               </div>
 
               {/* Contact form */}
@@ -118,4 +118,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Checkout;
