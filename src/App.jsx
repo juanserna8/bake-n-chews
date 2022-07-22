@@ -14,7 +14,7 @@ import Testimonials from './pages/Testimonials';
 import Cakes from './pages/Cakes';
 import BlogPost from './pages/BlogPost';
 import About from './pages/About';
-import Contact from './pages/Contact';
+import Cart from './pages/Cart';
 import Help from './pages/Help';
 import PageNotFound from './pages/PageNotFound';
 
@@ -45,7 +45,7 @@ function App() {
         <Route path="/cakes" element={<Cakes />} />
         <Route path="/blog-post" element={<BlogPost />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/help" element={<Help />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
