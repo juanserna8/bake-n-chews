@@ -128,7 +128,7 @@ function Header() {
             {/* Desktop CTA on the right */}
             <ul className="flex justify-end flex-wrap items-center">
               <li>
-                <Link to="/contact" className="btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6">
+                <Link to="/cart" className="btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6">
                   <svg 
                     className="h-6 w-6 text-white"  
                     viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  
