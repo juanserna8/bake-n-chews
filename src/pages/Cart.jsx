@@ -1,10 +1,14 @@
 import React from 'react';
-
+import { useSelector, useDispatch } from "react-redux"
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Footer from '../partials/Footer';
+import { decrement, increment } from '../reducers/counter';
 
 function Cart() {
+  const { value } = useSelector((state) => state.counter)
+  const dispatch = useDispatch()
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -42,6 +46,9 @@ function Cart() {
                     <p className='text-white'>Lita</p>
                   </li>
                 </ul>
+                <h1 className='text-white'>Count: {value}</h1> 
+                <button onClick={() => dispatch(increment())}>Increment</button>
+                <button onClick={() => dispatch(decrement())}>Decrement</button>
               </div>
 
             </div>
