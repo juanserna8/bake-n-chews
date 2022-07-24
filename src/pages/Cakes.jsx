@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Header from '../partials/Header';
-import HeroBlog from '../partials/HeroBlog';
+import CakesIntro from '../partials/CakesIntro';
 import FeaturedPosts from '../partials/FeaturedPosts';
-import BlogList from '../partials/BlogList';
+import CakeList from '../partials/CakeList';
 import Footer from '../partials/Footer';
 
 function Cakes() {
@@ -17,9 +17,9 @@ function Cakes() {
       <main className="grow">
 
         {/*  Page sections */}
-        <HeroBlog />
+        <CakesIntro />
         <FeaturedPosts />
-        <BlogList />
+        <CakeList />
 
       </main>
 
