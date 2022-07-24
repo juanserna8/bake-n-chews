@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import bake from '../images/bake.jpg'
-import HeroBg from '../images/hero-bg.jpg';
-import AuthorImage01 from '../images/news-author-01.jpg';
 
-function HeroBlog() {
+function CakesIntro() {
   return (
     <section className="relative">
 
@@ -48,4 +46,4 @@ function HeroBlog() {
   );
 }
 
-export default HeroBlog;
+export default CakesIntro;

@@ -25,10 +25,10 @@
             ]
     },
     {
-        "name": "Genovese2",
+        "name": "Devils Food Cake",
         "id": 2,
         "description": "Tres leches cake",
-        "image": "/images/cake.jpg",
+        "image": "/images/devils.jfif",
         "options":
             [
                 {
@@ -49,10 +49,10 @@
             ]
     },
     {
-        "name": "Genovese3",
+        "name": "Apricot & Rosemary",
         "id": 3,
         "description": "Tres leches cake",
-        "image": "/images/cake.jpg",
+        "image": "/images/apricot.jpeg",
         "options":
             [
                 {
@@ -73,10 +73,10 @@
             ]
     },
     {
-        "name": "Genovese4",
+        "name": "Carrot Cake",
         "id": 4,
         "description": "Tres leches cake",
-        "image": "/images/cake.jpg",
+        "image": "/images/carrot.jpeg",
         "options":
             [
                 {
@@ -97,10 +97,10 @@
             ]
     },
     {
-        "name": "Genovese5",
+        "name": "Vanilla Cake",
         "id": 5,
         "description": "Tres leches cake",
-        "image": "/images/cake.jpg",
+        "image": "/images/vanilla.jpg",
         "options":
             [
                 {
@@ -121,10 +121,10 @@
             ]
     },
     {
-        "name": "Genovese6",
+        "name": "Lemon Cake",
         "id": 6,
         "description": "Tres leches cake",
-        "image": "/images/cake.jpg",
+        "image": "/images/lemon.jpg",
         "options":
             [
                 {
