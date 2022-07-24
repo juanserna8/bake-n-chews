@@ -94,7 +94,7 @@ function Header() {
                 <Link to="/cakes" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">Cakes</Link>
               </li>
               <li>
-                <Link to="/testimonials" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">Testimonials</Link>
+                <Link to="/contact" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">Contact us</Link>
               </li>
               {/* 1st level: hover */}
               <Dropdown title="Resources">

@@ -9,7 +9,7 @@ import TestimonialsCircles from '../partials/TestimonialsCircles';
 import Cta from '../partials/Cta';
 import Footer from '../partials/Footer';
 
-function Testimonials() {
+function Contact() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -36,4 +36,4 @@ function Testimonials() {
   );
 }
 
-export default Testimonials;
+export default Contact;
