@@ -15,7 +15,7 @@ import NewsAuthor05 from '../images/news-author-05.jpg';
 import NewsAuthor06 from '../images/news-author-06.jpg';
 import CakeCard from './CakeCard';
 
-function BlogList() {
+function CakeList() {
   
   return (
     <section>
@@ -290,4 +290,4 @@ function BlogList() {
   );
 }
 
-export default BlogList;
+export default CakeList;

@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../reducers/shoppingCartSlice';
 
 const CakeCard = ({cake}) => {
     //Initial state for price, which is the small's size price
     let [cakePrice, setCakePrice] = useState(cake.options[0]?.price)
     const [selected, setSelected] = useState()
 
+    const dispatch = useDispatch();
 
     function handleClick(index, price) {
         //All functions triggered by the click have been grouped in handle click
         setSelected(index)
         setCakePrice(price)
     }
+
+    const handleAddToCart = (cake) => {
+        dispatch(addToCart(cake))
+    }
      
     return (
         <div className='mb-4'>
-            <figure className='relative h-0 mb-4 pb-9/16'>
+            <figure className='relative mb-4 pb-9/16'>
                 <img 
                     className='absolute inset-0 w-full h-full object-cover' 
                     src={cake.image} 
@@ -44,7 +51,12 @@ const CakeCard = ({cake}) => {
                             )
                             })}
                         </div>
-                        <button className='btn-sm text-white bg-teal-500 hover:bg-teal-400 hover:text-black hover:border hover:border-white h-1/5 my-2'>Add to cart</button>
+                        <button 
+                            className='btn-sm text-white bg-teal-500 hover:bg-teal-400 hover:text-black hover:border hover:border-white h-1/5 my-2'
+                            onClick={() => handleAddToCart(cake)}
+                        >
+                            Add to cart
+                        </button>
                     </div>
                 </div>
         </div>
