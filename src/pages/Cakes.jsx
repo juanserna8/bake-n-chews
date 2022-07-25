@@ -2,7 +2,6 @@ import React from 'react';
 
 import Header from '../partials/Header';
 import CakesIntro from '../partials/CakesIntro';
-import FeaturedPosts from '../partials/FeaturedPosts';
 import CakeList from '../partials/CakeList';
 import Footer from '../partials/Footer';
 
@@ -18,7 +17,6 @@ function Cakes() {
 
         {/*  Page sections */}
         <CakesIntro />
-        <FeaturedPosts />
         <CakeList />
 
       </main>

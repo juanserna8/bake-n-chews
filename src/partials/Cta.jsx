@@ -32,19 +32,49 @@ function Cta() {
 
             {/* CTA content */}
             <div className="mb-6 lg:mr-16 lg:mb-0 text-center lg:text-left lg:w-1/2">
-              <h3 className="h3 font-red-hat-display text-gray-100">Free until you’re ready to launch</h3>
+              <h3 className="h3 font-red-hat-display text-gray-100">Request a quote</h3>
             </div>
 
             {/* CTA form */}
-            <form className="w-full lg:w-1/2">
-              <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none">
-                <input type="tel" className="form-input w-full mb-2 sm:mb-0 sm:mr-2" placeholder="Phone number" aria-label="Phone number" />
-                <a className="btn text-white bg-teal-500 hover:bg-teal-400 shrink-0" href="#0">Request code</a>
-              </div>
+              
+            <form className="max-w-xl mx-auto">
+                <div className="flex flex-wrap -mx-3 mb-5">
+                  <div className="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="first-name">First Name <span className="text-red-600">*</span></label>
+                    <input id="first-name" type="text" className="form-input w-full" placeholder="Enter your first name" required />
+                  </div>
+                  <div className="w-full md:w-1/2 px-3">
+                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="last-name">Last Name <span className="text-red-600">*</span></label>
+                    <input id="last-name" type="text" className="form-input w-full" placeholder="Enter your last name" required />
+                  </div>
+                </div>
+                <div className="flex flex-wrap -mx-3 mb-5">
+                  <div className="w-full px-3">
+                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="phone">Phone Number <span className="text-red-600">*</span></label>
+                    <input id="phone" type="tel" className="form-input w-full" placeholder="Enter your phone number" required />
+                  </div>
+                </div>
+                <div className="flex flex-wrap -mx-3 mb-5">
+                  <div className="w-full px-3">
+                      <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium" htmlFor="message">Details <span className="text-red-600">*</span></label>
+                    <textarea id="message" rows="4" className="form-textarea w-full" placeholder="How would you wish your next cake be like?
+                    Please specify the event theme, number of portions, and fruits and ingredients wished."></textarea>
+                  </div>
+                </div>
+                <div className="flex flex-wrap -mx-3 mt-6">
+                  <div className="w-full px-3">
+                    <button className="btn text-white bg-teal-500 hover:bg-teal-400 w-full flex items-center">
+                      <span>Get a free quote</span>
+                      <svg className="w-3 h-3 shrink-0 mt-px ml-2" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                        <path className="fill-current" d="M6.602 11l-.875-.864L9.33 6.534H0v-1.25h9.33L5.727 1.693l.875-.875 5.091 5.091z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </form>
+              
               {/* Success message */}
               {/* <p className="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm">Thanks for subscribing!</p> */}
-            </form>
-
           </div>
 
         </div>

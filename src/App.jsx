@@ -10,7 +10,7 @@ import './css/style.scss';
 import AOS from 'aos';
 
 import Home from './pages/Home';
-import Testimonials from './pages/Testimonials';
+import Contact from './pages/Contact';
 import Cakes from './pages/Cakes';
 import BlogPost from './pages/BlogPost';
 import About from './pages/About';
@@ -41,7 +41,7 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/cakes" element={<Cakes />} />
         <Route path="/blog-post" element={<BlogPost />} />
         <Route path="/about" element={<About />} />

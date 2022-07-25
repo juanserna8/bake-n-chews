@@ -25,8 +25,6 @@ function CakesIntro() {
                   <Link to="/blog-post">
                     <h1 className="h1 font-red-hat-display mb-4">Our Cakes</h1>
                   </Link>
-                  <p className="text-xl text-gray-600 dark:text-gray-400">Hand made cakes baked with love for your celebrations, events and special dates!</p>
-                  <p className="text-xl text-gray-600 dark:text-gray-400">Deliveries in Hobart and Surrounds.</p>
                 </div>
                 {/* Article meta */}
                 <div className="md:flex md:items-center md:justify-between mt-5">
