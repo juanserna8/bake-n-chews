@@ -16,9 +16,10 @@ const CakeCard = ({cake}) => {
     }
 
     const handleAddToCart = (cake) => {
-        dispatch(addToCart(cake))
+        dispatch(addToCart(cake, cake.options[selected]))
+        console.log(cake, cake.options[selected])
     }
-     
+
     return (
         <div className='mb-4'>
             <figure className='relative mb-4 pb-9/16'>

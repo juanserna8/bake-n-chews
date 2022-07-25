@@ -1,11 +1,8 @@
 import React from 'react';
 
 import Header from '../partials/Header';
-import HeroTestimonials from '../partials/HeroTestimonials';
-import Clients from '../partials/Clients';
-import VideoTestimonial from '../partials/VideoTestimonial';
+import CustomizedCakes from '../partials/CustomizedCakes';
 import TestimonialsCarousel from '../partials/TestimonialsCarousel';
-import TestimonialsCircles from '../partials/TestimonialsCircles';
 import Cta from '../partials/Cta';
 import Footer from '../partials/Footer';
 
@@ -20,11 +17,8 @@ function Contact() {
       <main className="grow">
 
         {/*  Page sections */}
-        <HeroTestimonials />
-        <Clients />
-        <VideoTestimonial />
+        <CustomizedCakes />
         <TestimonialsCarousel />
-        <TestimonialsCircles />
         <Cta />
 
       </main>

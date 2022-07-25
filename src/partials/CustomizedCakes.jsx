@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import HeroBg from '../images/hero-bg-02.jpg';
 import tresLeches from "/images/personalized/tres-leches.jpeg"
 
-function HeroTestimonials() {
+function CustomizedCakes() {
   return (
     <section className="relative">
 
@@ -39,7 +39,7 @@ function HeroTestimonials() {
             </div>
             
             <div className="mt-8" data-aos="fade-down" data-aos-delay="300">
-              <Link className="btn text-white bg-teal-500 hover:bg-teal-400 ml-3" to="/contact">Request code</Link>
+              <Link className="btn text-white bg-teal-500 hover:bg-teal-400 ml-3" to="/contact">Get a quote</Link>
             </div>
           </div>
         </div>
@@ -49,4 +49,4 @@ function HeroTestimonials() {
   );
 }
 
-export default HeroTestimonials;
+export default CustomizedCakes;
