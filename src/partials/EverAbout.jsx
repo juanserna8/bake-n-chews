@@ -3,7 +3,7 @@ import React from 'react';
 import HeroBg from '../images/hero-bg-03.jpg';
 import HeroImage from '../images/about-hero.jpg';
 
-function HeroAbout() {
+function EverAbout() {
   return (
     <section className="relative">
 
@@ -14,7 +14,7 @@ function HeroAbout() {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+        <div className="pt-32 pb-10 md:pt-40 md:pb-10">
           <div className="text-center">
             <div className="relative flex justify-center items-center">
               <div className="relative inline-flex items-start" data-aos="fade-up">
@@ -22,7 +22,7 @@ function HeroAbout() {
                 <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-900" aria-hidden="true"></div>
               </div>
               <div className="absolute" data-aos="fade-down">
-                <h1 className="h1 lg:text-6xl font-red-hat-display">Make your own <span className="text-teal-500">way</span></h1>
+                <h1 className="h1 lg:text-6xl font-red-hat-display">The Ever <span className="text-teal-500">Cake</span></h1>
               </div>
               <div className="absolute bottom-0 -mb-8 w-0.5 h-16 bg-gray-300 dark:bg-gray-700" aria-hidden="true"></div>
             </div>
@@ -34,4 +34,4 @@ function HeroAbout() {
   );
 }
 
-export default HeroAbout;
+export default EverAbout;

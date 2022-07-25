@@ -207,10 +207,10 @@ function Header() {
                       <Link to="/about" className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2">About</Link>
                     </li>
                     <li>
-                      <Link to="/blog" className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2">Blog</Link>
+                      <Link to="/cakes" className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2">Cakes</Link>
                     </li>
                     <li>
-                      <Link to="/testimonials" className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2">Testimonials</Link>
+                      <Link to="/contact" className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2">Contact us</Link>
                     </li>
                     <li className="py-2 my-2 border-t border-b border-gray-200 dark:border-gray-800">
                       <span className="flex text-gray-600 dark:text-gray-400 py-2">Resources</span>
