@@ -44,90 +44,6 @@ function Footer() {
                     </Link>
                 </div>
                 
-                {/* 2nd, 3rd, 4th and 5th blocks */}
-                <div className="md:col-span-10 lg:col-span-9 grid grid-cols-2 md:grid-cols-4 gap-8">
-
-                    {/* 2nd block */}
-                    <div className="text-sm">
-                        <h6 className="font-medium uppercase mb-2">Products</h6>
-                        <ul>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Drag And Drop</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Visual Studio X</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Easy Content</Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* 3rd block */}
-                    <div className="text-sm">
-                        <h6 className="font-medium uppercase mb-2">Resources</h6>
-                        <ul>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Industries and tools</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Use cases</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Blog</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Online events</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Nostrud exercitation</Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* 4th block */}
-                    <div className="text-sm">
-                        <h6 className="font-medium uppercase mb-2">Company</h6>
-                        <ul>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Diversity & inclusion</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">About us</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Press</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Customer stories</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Online communities</Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* 5th block */}
-                    <div className="text-sm">
-                        <h6 className="font-medium uppercase mb-2">Support</h6>
-                        <ul>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Documentation</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Tutorials & guides</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Webinars</Link>
-                            </li>
-                            <li className="mb-1">
-                                <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Open-source</Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-
             </div>
 
             {/* Bottom area */}
@@ -135,20 +51,7 @@ function Footer() {
 
                 {/* Social links */}
                 <ul className="flex mb-4 md:order-2 md:ml-4 md:mb-0">
-                    <li>
-                        <a className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out" href="#0" aria-label="Twitter">
-                            <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M24 11.5c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4 0 1.6 1.1 2.9 2.6 3.2-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H8c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4c.7-.5 1.3-1.1 1.7-1.8z" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li className="ml-4">
-                        <a className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out" href="#0" aria-label="Github">
-                            <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
-                            </svg>
-                        </a>
-                    </li>
+                    {/* Facebook */}
                     <li className="ml-4">
                         <a className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out" href="#0" aria-label="Facebook">
                             <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -156,6 +59,7 @@ function Footer() {
                             </svg>
                         </a>
                     </li>
+                    {/* Instagram */}
                     <li className="ml-4">
                         <a className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out" href="#0" aria-label="Instagram">
                             <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -165,22 +69,10 @@ function Footer() {
                             </svg>
                         </a>
                     </li>
-                    <li className="ml-4">
-                        <a className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out" href="#0" aria-label="Linkedin">
-                            <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.3 8H8.7c-.4 0-.7.3-.7.7v14.7c0 .3.3.6.7.6h14.7c.4 0 .7-.3.7-.7V8.7c-.1-.4-.4-.7-.8-.7zM12.7 21.6h-2.3V14h2.4v7.6h-.1zM11.6 13c-.8 0-1.4-.7-1.4-1.4 0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4-.1.7-.7 1.4-1.4 1.4zm10 8.6h-2.4v-3.7c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8h-2.4V14h2.3v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2h.1z" />
-                            </svg>
-                        </a>
-                    </li>
                 </ul>
 
-                {/* Middle links */}
-                <div className="text-sm md:order-1 text-gray-700 mb-2 md:mb-0">
-                    <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Terms</Link> · <Link className="text-gray-600 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" to="#">Privacy Policy</Link>
-                </div>
-
                 {/* Copyrights note */}
-                <div className="text-gray-600 dark:text-gray-400 text-sm mr-4">&copy; 2020 Appy. All rights reserved.</div>
+                <div className="text-gray-600 dark:text-gray-400 text-sm mr-4">&copy; 2022. All rights reserved.</div>
 
             </div>
 

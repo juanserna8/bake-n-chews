@@ -1,12 +1,8 @@
 import React from 'react';
 
 import Header from '../partials/Header';
-import HeroAbout from '../partials/HeroAbout';
-import FeaturesGallery from '../partials/FeaturesGallery';
-import Timeline from '../partials/Timeline';
-import Career from '../partials/Career';
-import FeaturesAnimation from '../partials/FeaturesAnimation';
-import Team from '../partials/Team';
+import EverAbout from '../partials/EverAbout';
+import BusinessDescription from '../partials/BusinessDescription';
 import CtaContact from '../partials/CtaContact';
 import Footer from '../partials/Footer';
 
@@ -21,12 +17,8 @@ function About() {
       <main className="grow">
 
         {/*  Page sections */}
-        <HeroAbout />
-        <FeaturesGallery />
-        <Timeline />
-        <Career />
-        <FeaturesAnimation />
-        <Team />
+        <EverAbout />
+        <BusinessDescription />
         <CtaContact />
 
       </main>

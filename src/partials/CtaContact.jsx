@@ -3,7 +3,7 @@ import React from 'react';
 function CtaContact() {
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 my-8">
 
         {/* CTA box */}
         <div className="dark relative bg-gray-800 py-10 px-8 md:py-16 md:px-12">
@@ -31,9 +31,8 @@ function CtaContact() {
           <div className="relative max-w-3xl mx-auto text-center">
 
             {/* CTA header */}
-            <h3 className="h3 font-red-hat-display text-gray-100 mb-2">We want to talk to you</h3>
-            <p className="text-gray-400 text-xl">Do not worry too about picking exactly the right role; we can always give you more options after starting the conversation.</p>
-
+            <h3 className="h3 font-red-hat-display text-gray-100 mb-2">Let's get in touch</h3>
+            
             {/* CTA button */}
             <div className="flex justify-center mt-8">
               <a className="btn text-white bg-teal-500 hover:bg-teal-400" href="#0">Send us a message</a>
