@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from '../utils/Dropdown';
 import Transition from '../utils/Transition';
-import logo from '../images/mohan-logo.jpeg'
+import logo from '/images/logoHeader.png'
 
 function Header() {
 
@@ -52,7 +52,7 @@ function Header() {
   }, [darkMode]);  
 
   return (
-    <header className="absolute w-full z-30">
+    <header className="absolute w-full z-30 bg-yellowHeader-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
 
@@ -63,22 +63,8 @@ function Header() {
               <img 
                 src={logo} 
                 alt="El Mohan Logo" 
-                className='object-contain h-12 rounded-full border border-gray-600 dark:border-gray-300'  
+                className='object-contain h-12 rounded-full '  
               />
-              {/* <svg className="w-8 h-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="logo_a">
-                    <stop stopColor="#3ABAB4" offset="0%" />
-                    <stop stopColor="#7F9CF5" offset="100%" />
-                  </linearGradient>
-                  <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="logo_b">
-                    <stop stopColor="#3ABAB4" offset="0%" />
-                    <stop stopColor="#3ABAB4" stopOpacity="0" offset="100%" />
-                  </linearGradient>
-                </defs>
-                <path d="M32 16h-8a8 8 0 10-16 0H0C0 7.163 7.163 0 16 0s16 7.163 16 16z" fill="url(#logo_a)" />
-                <path d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16h8a8 8 0 1016 0h8z" fill="url(#logo_b)" />
-              </svg> */}
             </Link>
           </div>
 
@@ -88,54 +74,24 @@ function Header() {
             {/* Desktop menu links */}
             <ul className="flex grow flex-wrap items-center font-medium">
               <li>
-                <Link to="/about" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">About</Link>
+                <Link to="/about" className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">About</Link>
               </li>
               <li>
-                <Link to="/cakes" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">Cakes</Link>
+                <Link to="/cakes" className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">Cakes</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">Contact us</Link>
+                <Link to="/contact" className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">Contact us</Link>
               </li>
-              {/* 1st level: hover */}
-              <Dropdown title="Resources">
-                {/* 2nd level: hover */}
-                <li>
-                  <Link to="/help" className="text-sm text-gray-600 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-500 flex py-2 px-4 leading-tight">Help center</Link>
-                </li>
-                <li>
-                  <Link to="/404" className="text-sm text-gray-600 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-500 flex py-2 px-4 leading-tight">404</Link>
-                </li>
-              </Dropdown>
-            </ul>
-
-            {/* Desktop lights switch */}
-            <div className="form-switch flex flex-col justify-center ml-3">
-              <input type="checkbox" name="light-switch" id="light-switch-desktop" className="light-switch sr-only" checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
-              <label className="relative" htmlFor="light-switch-desktop">
-                <span className="relative bg-gradient-to-t from-gray-100 to-white dark:from-gray-800 dark:to-gray-700 shadow-sm z-10" aria-hidden="true"></span>
-                <svg className="absolute inset-0" width="44" height="24" viewBox="0 0 44 24" xmlns="http://www.w3.org/2000/svg">
-                  <g className="fill-current text-white" fillRule="nonzero" opacity=".88">
-                    <path d="M32 8a.5.5 0 00.5-.5v-1a.5.5 0 10-1 0v1a.5.5 0 00.5.5zM35.182 9.318a.5.5 0 00.354-.147l.707-.707a.5.5 0 00-.707-.707l-.707.707a.5.5 0 00.353.854zM37.5 11.5h-1a.5.5 0 100 1h1a.5.5 0 100-1zM35.536 14.829a.5.5 0 00-.707.707l.707.707a.5.5 0 00.707-.707l-.707-.707zM32 16a.5.5 0 00-.5.5v1a.5.5 0 101 0v-1a.5.5 0 00-.5-.5zM28.464 14.829l-.707.707a.5.5 0 00.707.707l.707-.707a.5.5 0 00-.707-.707zM28 12a.5.5 0 00-.5-.5h-1a.5.5 0 100 1h1a.5.5 0 00.5-.5zM28.464 9.171a.5.5 0 00.707-.707l-.707-.707a.5.5 0 00-.707.707l.707.707z" />
-                    <circle cx="32" cy="12" r="3" />
-                    <circle fillOpacity=".4" cx="12" cy="12" r="6" />
-                    <circle fillOpacity=".88" cx="12" cy="12" r="3" />
-                  </g>
-                </svg>
-                <span className="sr-only">Switch to light / dark version</span>
-              </label>
-            </div>            
+            </ul>     
 
             {/* Desktop CTA on the right */}
             <ul className="flex justify-end flex-wrap items-center">
               <li>
-                <Link to="/cart" className="btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6">
-                  <svg 
-                    className="h-6 w-6 text-white"  
-                    viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  
-                    strokeLinecap="round"  strokeLinejoin="round">  <circle cx="9" cy="21" r="1" />  
-                    <circle cx="20" cy="21" r="1" />  
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                  </svg>
+                <Link to="/cart" className="btn-sm text-white ml-6 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                <svg class="h-6 w-6 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+
                 </Link>
               </li>
             </ul>

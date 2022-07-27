@@ -24,7 +24,7 @@ const CakeCard = ({cake}) => {
         <div className='mb-4'>
             <figure className='relative mb-4 pb-9/16'>
                 <img 
-                    className='absolute inset-0 w-full h-full object-cover' 
+                    className='absolute inset-0 w-full h-[20rem] object-cover' 
                     src={cake.image} 
                     alt="genovese pic" 
                 />
