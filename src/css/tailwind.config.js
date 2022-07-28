@@ -81,6 +81,12 @@ module.exports = {
         },
         grayHeader: {
           100: '#BFC6D1'
+        },
+        generalYellow: {
+          100: '#faf4eb'
+        },
+        yellowBorder: {
+          100: '#8a6a2e'
         }
       },
       outline: {
