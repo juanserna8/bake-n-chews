@@ -31,7 +31,7 @@ function Footer() {
                     <img 
                         src={logo} 
                         alt="El Mohan Logo" 
-                        className='object-contain h-12 rounded-full '  
+                        className='object-contain h-16 rounded-full '  
                     />
                     </Link>
                 </div>

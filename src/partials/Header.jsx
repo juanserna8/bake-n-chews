@@ -101,27 +101,10 @@ function Header() {
           {/* Mobile menu */}
           <div className="inline-flex md:hidden">
 
-            {/* Mobile lights switch */}
-            <div className="form-switch flex flex-col justify-center mr-6 -mt-0.5">
-              <input type="checkbox" name="light-switch" id="light-switch-mobile" className="light-switch sr-only" checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
-              <label className="relative" htmlFor="light-switch-mobile">
-                <span className="relative bg-gradient-to-t from-gray-100 to-white dark:from-gray-800 dark:to-gray-700 shadow-sm z-10" aria-hidden="true"></span>
-                <svg className="absolute inset-0" width="44" height="24" viewBox="0 0 44 24" xmlns="http://www.w3.org/2000/svg">
-                  <g className="fill-current text-white" fillRule="nonzero" opacity=".88">
-                    <path d="M32 8a.5.5 0 00.5-.5v-1a.5.5 0 10-1 0v1a.5.5 0 00.5.5zM35.182 9.318a.5.5 0 00.354-.147l.707-.707a.5.5 0 00-.707-.707l-.707.707a.5.5 0 00.353.854zM37.5 11.5h-1a.5.5 0 100 1h1a.5.5 0 100-1zM35.536 14.829a.5.5 0 00-.707.707l.707.707a.5.5 0 00.707-.707l-.707-.707zM32 16a.5.5 0 00-.5.5v1a.5.5 0 101 0v-1a.5.5 0 00-.5-.5zM28.464 14.829l-.707.707a.5.5 0 00.707.707l.707-.707a.5.5 0 00-.707-.707zM28 12a.5.5 0 00-.5-.5h-1a.5.5 0 100 1h1a.5.5 0 00.5-.5zM28.464 9.171a.5.5 0 00.707-.707l-.707-.707a.5.5 0 00-.707.707l.707.707z" />
-                    <circle cx="32" cy="12" r="3" />
-                    <circle fillOpacity=".4" cx="12" cy="12" r="6" />
-                    <circle fillOpacity=".88" cx="12" cy="12" r="3" />
-                  </g>
-                </svg>
-                <span className="sr-only">Switch to light / dark version</span>
-              </label>
-            </div>
-
             {/* Hamburger button */}
             <button ref={trigger} className={`hamburger ${mobileNavOpen && 'active'}`} aria-controls="mobile-nav" aria-expanded={mobileNavOpen} onClick={() => setMobileNavOpen(!mobileNavOpen)}>
               <span className="sr-only">Menu</span>
-              <svg className="w-6 h-6 fill-current text-gray-900 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition duration-150 ease-in-out" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6 fill-current text-gray-900 hover:text-gray-900 transition duration-150 ease-in-out" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <rect y="4" width="24" height="2" rx="1" />
                 <rect y="11" width="24" height="2" rx="1" />
                 <rect y="18" width="24" height="2" rx="1" />
@@ -140,47 +123,29 @@ function Header() {
               leaveStart="opacity-100"
               leaveEnd="opacity-0"              
             >
-              <nav id="mobile-nav" ref={mobileNav} className="fixed top-0 h-screen z-20 left-0 w-full max-w-sm -ml-16 overflow-scroll bg-white dark:bg-gray-900 shadow-lg no-scrollbar">
-                <div className="py-6 pr-4 pl-20">                  
+              <nav id="mobile-nav" ref={mobileNav} className="fixed top-0 h-screen z-20 left-0 w-full max-w-sm -ml-16 overflow-scroll bg-yellowHeader-100 shadow-lg no-scrollbar">
+                <div className="py-6 pr-4 pl-20 ">                  
                   {/* Logo */}
-                  <svg className="w-8 h-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="menulogo_a">
-                        <stop stopColor="#3ABAB4" offset="0%" />
-                        <stop stopColor="#7F9CF5" offset="100%" />
-                      </linearGradient>
-                      <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="menulogo_b">
-                        <stop stopColor="#3ABAB4" offset="0%" />
-                        <stop stopColor="#3ABAB4" stopOpacity="0" offset="100%" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M32 16h-8a8 8 0 10-16 0H0C0 7.163 7.163 0 16 0s16 7.163 16 16z" fill="url(#menulogo_a)" />
-                    <path d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16h8a8 8 0 1016 0h8z" fill="url(#menulogo_b)" />
-                  </svg>
+                  <img 
+                    src={logo} 
+                    alt="El Mohan Logo" 
+                    className='object-contain h-12 rounded '  
+                  />
+
                   {/* Links */}
-                  <ul>
+                  <ul className='text-black py-2 my-4 border-t border-gray-800'>
                     <li>
-                      <Link to="/about" className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2">About</Link>
+                      <Link to="/about" className="flex py-2">About</Link>
                     </li>
                     <li>
-                      <Link to="/cakes" className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2">Cakes</Link>
+                      <Link to="/cakes" className="flex py-2">Cakes</Link>
                     </li>
                     <li>
-                      <Link to="/contact" className="flex text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-2">Contact us</Link>
+                      <Link to="/contact" className="flex py-2">Contact us</Link>
                     </li>
-                    <li className="py-2 my-2 border-t border-b border-gray-200 dark:border-gray-800">
-                      <span className="flex text-gray-600 dark:text-gray-400 py-2">Resources</span>
-                      <ul className="pl-4">
-                        <li>
-                          <Link to="/help" className="text-sm flex font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 py-2">Help center</Link>
-                        </li>
-                        <li>
-                          <Link to="/404" className="text-sm flex font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 py-2">404</Link>
-                        </li>
-                      </ul>
-                    </li>
+                   
                     <li>
-                      <Link to="/contact" className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded text-white bg-teal-500 hover:bg-teal-400 transition duration-150 ease-in-out">Request code</Link>
+                      <Link to="/contact" className="font-medium w-full inline-flex items-center justify-center px-4 py-2 my-2 rounded btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 transition duration-150 ease-in-out">Order online</Link>
                     </li>
                   </ul>
                 </div>

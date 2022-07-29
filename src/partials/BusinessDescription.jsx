@@ -7,7 +7,6 @@ import AboutImage04 from '../images/about-grid-04.jpg';
 import Vanilla from "/images/vanilla.jpg";
 import Carrot from "/images/carrot.jpeg";
 import Tres from "/images/personalized/tres-leches.jpeg";
-import AboutImage06 from '../images/about-grid-06.jpg';
 
 function BusinessDescription() {
   return (
@@ -39,12 +38,12 @@ function BusinessDescription() {
 
           {/* Images grid */}
           <div className="grid grid-cols-12 gap-3 mt-12 md:mt-20" data-aos-id-gallery>
-            <img className="col-span-4 object-cover h-[16.5rem]" src={Cake} width="360" height="270" alt="About grid 01" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" />
-            <img className="col-span-3" src={AboutImage02} width="270" height="270" alt="About grid 02" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="100" />
-            <img className="col-span-5 object-cover h-[16.5rem]" src={Lemon} width="450" height="270" alt="About grid 03" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="200" />
-            <img className="col-span-3" src={AboutImage04} width="270" height="270" alt="About grid 04" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="300" />
-            <img className="col-span-5 object-cover h-[16.5rem]" src={Carrot} width="450" height="270" alt="About grid 05" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="400" />
-            <img className="col-span-4 object-cover h-[16.5rem]" src={Tres} width="360" height="270" alt="About grid 06" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="500" />
+            <img className="col-span-6 md:col-span-4 object-cover h-[16.5rem]" src={Cake} width="360" height="270" alt="About grid 01" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" />
+            <img className="col-span-6 md:col-span-3 object-cover h-[16.5rem]" src={AboutImage02} width="270" height="270" alt="About grid 02" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="100" />
+            <img className="col-span-6 md:col-span-5 object-cover h-[16.5rem]" src={Lemon} width="450" height="270" alt="About grid 03" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="200" />
+            <img className="col-span-6 md:col-span-3 object-cover h-[16.5rem]" src={AboutImage04} width="270" height="270" alt="About grid 04" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="300" />
+            <img className="col-span-6 md:col-span-5 object-cover h-[16.5rem]" src={Carrot} width="450" height="270" alt="About grid 05" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="400" />
+            <img className="col-span-6 md:col-span-4 object-cover h-[16.5rem]" src={Tres} width="360" height="270" alt="About grid 06" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="500" />
           </div>
 
       </div>
