@@ -52,7 +52,7 @@ function Header() {
   }, [darkMode]);  
 
   return (
-    <header className="absolute w-full z-30 bg-yellowHeader-100">
+    <header className="absolute w-full z-30 bg-yellowHeader-100 border-b border-yellowBorder-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
 
@@ -133,7 +133,7 @@ function Header() {
                   />
 
                   {/* Links */}
-                  <ul className='text-black py-2 my-4 border-t border-gray-800'>
+                  <ul className='text-black py-2 my-4 border-t border-yellowBorder-100'>
                     <li>
                       <Link to="/about" className="flex py-2">About</Link>
                     </li>
