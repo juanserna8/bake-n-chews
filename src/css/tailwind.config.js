@@ -87,7 +87,7 @@ module.exports = {
         },
         yellowBorder: {
           100: '#8a6a2e'
-        }
+        },
       },
       outline: {
         blue: '2px solid rgba(0, 112, 244, 0.5)',

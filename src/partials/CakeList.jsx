@@ -18,9 +18,14 @@ import CakeCard from './CakeCard';
 function CakeList() {
   
   return (
-    <section>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pb-12 md:pb-20">
+    <section className='mt-[8rem]'>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10">
+
+        <div className="text-center">
+            <h2 className="h2 text-black">Our Cakes</h2>
+        </div>
+
+        <div className="mt-[4rem] md:mt-[6rem]">
           <div className="lg:flex lg:justify-between">
 
             {/* Main content */}
@@ -28,8 +33,6 @@ function CakeList() {
 
               {/* Articles container */}
               <div className="">
-
-                {/* 1st article */}
                 
                   <header>
                     {

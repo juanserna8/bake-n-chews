@@ -59,7 +59,7 @@ function TestimonialsCarousel() {
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pb-12 md:pb-20">
+        <div className="pb-6 md:pb-8">
 
           {/* Carousel area */}
           <div className="max-w-5xl mx-auto">
@@ -103,7 +103,7 @@ function TestimonialsCarousel() {
               </div>
 
               {/* Skewed borders */}
-              <div className="absolute inset-0 transform -skew-x-3 border-2 border-gray-200 dark:border-gray-800 pointer-events-none" aria-hidden="true"></div>
+              <div className="absolute inset-0 transform -skew-x-3 border border-gray-200 dark:border-gray-800 pointer-events-none" aria-hidden="true"></div>
 
               {/* Arrows */}
               <div className="absolute inset-0 flex items-center justify-between">
@@ -132,6 +132,7 @@ function TestimonialsCarousel() {
           </div>
         </div>
       </div>
+      <h2 className='h3 text-black text-center'>Customer reviews</h2>
     </section>
   );
 }

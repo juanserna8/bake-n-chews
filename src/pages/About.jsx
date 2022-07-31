@@ -14,7 +14,7 @@ function About() {
       <Header />
 
       {/*  Page content */}
-      <main className="grow">
+      <main className="grow mb-8">
 
         {/*  Page sections */}
         <EverAbout />

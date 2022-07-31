@@ -8,18 +8,18 @@ import Footer from '../partials/Footer';
 
 function Contact() {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className="flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus text-black">
 
       {/*  Site header */}
       <Header />
 
       {/*  Page content */}
-      <main className="grow">
+      <main className="grow mb-8">
 
         {/*  Page sections */}
         <CustomizedCakes />
-        <TestimonialsCarousel />
         <Cta />
+        <TestimonialsCarousel />
 
       </main>
 
