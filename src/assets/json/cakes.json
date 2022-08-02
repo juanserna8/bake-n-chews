@@ -10,17 +10,20 @@
                 {
                     "size": "Small",
                     "people": "5 - 7 people",
-                    "price": 30
+                    "price": 30,
+                    "id": 1
                 },
                 {
                     "size": "Medium",
                     "people": "10 - 12 people",
-                    "price": 55
+                    "price": 55,
+                    "id": 2
                 },
                 {
                     "size": "Big",
                     "people": "18 - 20 people",
-                    "price": 70
+                    "price": 70,
+                    "id": 3
                 }
             ]
     },
@@ -34,17 +37,20 @@
                 {
                     "size": "Small",
                     "people": "5 - 7 people",
-                    "price": 25
+                    "price": 25,
+                    "id": 1
                 },
                 {
                     "size": "Medium",
                     "people": "10 - 12 people",
-                    "price": 43
+                    "price": 43,
+                    "id": 2
                 },
                 {
                     "size": "Big",
                     "people": "18 - 20 people",
-                    "price": 60
+                    "price": 60,
+                    "id": 3
                 }
             ]
     },
@@ -58,17 +64,20 @@
                 {
                     "size": "Small",
                     "people": "5 - 7 people",
-                    "price": 25
+                    "price": 25,
+                    "id": 1
                 },
                 {
                     "size": "Medium",
                     "people": "10 - 12 people",
-                    "price": 43
+                    "price": 43,
+                    "id": 2
                 },
                 {
                     "size": "Big",
                     "people": "18 - 20 people",
-                    "price": 60
+                    "price": 60,
+                    "id": 3
                 }
             ]
     },
@@ -82,17 +91,20 @@
                 {
                     "size": "Small",
                     "people": "5 - 7 people",
-                    "price": 25
+                    "price": 25,
+                    "id": 1
                 },
                 {
                     "size": "Medium",
                     "people": "10 - 12 people",
-                    "price": 43
+                    "price": 43,
+                    "id": 2
                 },
                 {
                     "size": "Big",
                     "people": "18 - 20 people",
-                    "price": 60
+                    "price": 60,
+                    "id": 3
                 }
             ]
     },
@@ -106,17 +118,20 @@
                 {
                     "size": "Small",
                     "people": "5 - 7 people",
-                    "price": 25
+                    "price": 25,
+                    "id": 1
                 },
                 {
                     "size": "Medium",
                     "people": "10 - 12 people",
-                    "price": 43
+                    "price": 43,
+                    "id": 2
                 },
                 {
                     "size": "Big",
                     "people": "18 - 20 people",
-                    "price": 60
+                    "price": 60,
+                    "id": 3
                 }
             ]
     },
@@ -130,17 +145,20 @@
                 {
                     "size": "Small",
                     "people": "5 - 7 people",
-                    "price": 25
+                    "price": 25,
+                    "id": 1
                 },
                 {
                     "size": "Medium",
                     "people": "10 - 12 people",
-                    "price": 43
+                    "price": 43,
+                    "id": 2
                 },
                 {
                     "size": "Big",
                     "people": "18 - 20 people",
-                    "price": 60
+                    "price": 60,
+                    "id": 3
                 }
             ]
     }

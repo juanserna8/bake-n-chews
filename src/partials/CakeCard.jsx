@@ -16,7 +16,7 @@ const CakeCard = ({cake}) => {
     }
 
     const handleAddToCart = (cake) => {
-        dispatch(addToCart(cake, cake.options[selected]))
+        dispatch(addToCart({cake, option: cake.options[selected]}))
         console.log(cake, cake.options[selected])
     }
 

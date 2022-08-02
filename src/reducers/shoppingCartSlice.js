@@ -9,7 +9,14 @@ export const shoppingCartSlice = createSlice({
     },
     reducers: {
         addToCart(state, action) {
-            state.cart.push(action.payload)
+            const cartItem = {
+                name: action.payload.cake.name,
+                image: action.payload.cake.image,
+                productId: action.payload.cake.id,
+                optionId: action.payload.option.id,
+                price: action.payload.option.price
+            }
+            state.cart.push(cartItem)
         }
     }
 });

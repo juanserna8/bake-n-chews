@@ -32,20 +32,18 @@ function CakeList() {
             <div className="lg:grow" data-aos="fade-down" data-aos-delay="200">
 
               {/* Articles container */}
-              <div className="">
+              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 sm:mx-auto">
                 
-                  <header>
                     {
                       cakes && cakes.map((cake, index) => {
                         return(
-                          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 sm:mx-auto" key={index}>
+                          <div className="sm:mx-auto" key={index}>
                             <CakeCard key={index} cake={cake} className="" />
                           </div>
                         )
                       })
                     }
                    
-                  </header>
             
               </div>
 
