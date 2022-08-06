@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../reducers/shoppingCartSlice';
+import { Link } from 'react-router-dom';
 
 const CakeCard = ({cake}) => {
     //Initial state for price, which is the small's size price
@@ -21,45 +22,18 @@ const CakeCard = ({cake}) => {
     }
 
     return (
-        <div className='mb-4'>
-            <figure className='relative mb-4 pb-9/16'>
-                <img 
-                    className='absolute inset-0 w-full h-[20rem] object-cover' 
-                    src={cake.image} 
-                    alt="genovese pic" 
-                />
+        <div className='w-full p-2'>
+            <figure className='w-full h-[20rem] mb-4'>
+                <img src={cake.image} alt={cake.name} className='h-[20rem] w-[24rem] object-cover' />
             </figure>
-                <div className='information-card flex flex-col h-full'>
-                    {/*Every section has its identifier I.e. information card */}
-                    <div className='title-and-price-card flex justify-between'>
-                        <div className='title-container'>
-                            <h3 className='h4 font-red-hat-display mb-2'>{ cake.name}</h3>
-                            <p className='text-gray-600 dark:text-gray-400 grow'>{ cake.description}</p>
-                        </div>
-                        <h3 className='h4 font-red-hat-display'>${cakePrice}</h3>
-                    </div>
-                    <div className='buttons-container flex justify-between mt-4'>
-                        <div className='flex flex-col'>{cake.options.map((cakeOption, index) => {
-                            return (
-                                <div key={index} className='flex justify-start items-center my-2'>
-                                    <button 
-                                        className={index == selected ? 'btn-sm text-white bg-redComplementary-100' : 'btn-sm text-white bg-teal-500 hover:bg-teal-400'}
-                                        onClick={() => handleClick(index, cakeOption.price)}  
-                                    >
-                                        {`${cakeOption.size} ${cakeOption.people}`}
-                                    </button>
-                                </div>
-                            )
-                            })}
-                        </div>
-                        <button 
-                            className='btn-sm text-white bg-teal-500 hover:bg-teal-400 hover:text-black hover:border hover:border-white h-1/5 my-2'
-                            onClick={() => handleAddToCart(cake)}
-                        >
-                            Add to cart
-                        </button>
-                    </div>
-                </div>
+            <p className='text-black h4 mb-4 text-center'>{cake.name}</p>
+            <p className='text-black text-center mb-4'>{cake.description}</p>
+            <button className='w-full flex justify-center mb-2'>
+            <Link to={`/cakes/${cake.id}`} className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">
+                <svg className="h-8 w-8 text-gray-400"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="12" y1="5" x2="12" y2="19" />  <line x1="16" y1="15" x2="12" y2="19" />  <line x1="8" y1="15" x2="12" y2="19" />
+                </svg>
+            </Link>
+            </button>
         </div>
     );
 }

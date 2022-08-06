@@ -3,7 +3,7 @@
     {
         "name": "Genovese",
         "id": 1,
-        "description": "Tres leches cake",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
         "image": "/images/cake.jpg",
         "options":
             [
@@ -30,7 +30,7 @@
     {
         "name": "Devils Food Cake",
         "id": 2,
-        "description": "Tres leches cake",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
         "image": "/images/devils.jfif",
         "options":
             [
@@ -57,7 +57,7 @@
     {
         "name": "Apricot & Rosemary",
         "id": 3,
-        "description": "Tres leches cake",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
         "image": "/images/apricot.jpeg",
         "options":
             [
@@ -84,7 +84,7 @@
     {
         "name": "Carrot Cake",
         "id": 4,
-        "description": "Tres leches cake",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
         "image": "/images/carrot.jpeg",
         "options":
             [
@@ -111,7 +111,7 @@
     {
         "name": "Vanilla Cake",
         "id": 5,
-        "description": "Tres leches cake",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
         "image": "/images/vanilla.jpg",
         "options":
             [
@@ -138,7 +138,7 @@
     {
         "name": "Lemon Cake",
         "id": 6,
-        "description": "Tres leches cake",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
         "image": "/images/lemon.jpg",
         "options":
             [

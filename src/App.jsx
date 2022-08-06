@@ -12,6 +12,7 @@ import AOS from 'aos';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Cakes from './pages/Cakes';
+import CakeInformation from './partials/CakeInformation'
 import BlogPost from './pages/BlogPost';
 import About from './pages/About';
 import Cart from './pages/Cart';
@@ -43,6 +44,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cakes" element={<Cakes />} />
+        <Route path="/cakes/:cakeId" element={<CakeInformation />} />
         <Route path="/blog-post" element={<BlogPost />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
