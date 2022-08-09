@@ -14,7 +14,9 @@ export const shoppingCartSlice = createSlice({
                 image: action.payload.cake.image,
                 productId: action.payload.cake.id,
                 optionId: action.payload.option.id,
-                price: action.payload.option.price
+                price: action.payload.option.price,
+                size: action.payload.option.size,
+                people: action.payload.option.people
             }
             state.cart.push(cartItem)
         }

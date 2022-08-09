@@ -12,7 +12,6 @@ const CakeInformation = () => {
     const [cake, setCake] = useState()
     let [cakePrice, setCakePrice] = useState()
     const [selected, setSelected] = useState()
-    
 
     const dispatch = useDispatch();
 
@@ -23,23 +22,22 @@ const CakeInformation = () => {
         setCakePrice(price)
     }
 
+    const { cakeId } = useParams()
+
+    useEffect(() => {
+        // const cakeArray = cakes.filter(cake => cake.id == cakeId)
+        // console.log(cakeArray)
+        const cakeObject = cakes.find(cake => cake.id == cakeId)
+        setCake(cakeObject)
+        setCakePrice(cakeObject.options[0]?.price)
+    }, [])
+
     // This function is used to add items to the cart
     const handleAddToCart = (cake) => {
         dispatch(addToCart({cake, option: cake.options[selected]}))
         console.log('hello uzmi', cake, cake.options[selected])
     }
 
-    const { cakeId } = useParams()
-
-    useEffect(() => {
-        console.log(cakeId)
-        // const cakeArray = cakes.filter(cake => cake.id == cakeId)
-        // console.log(cakeArray)
-        const cakeObject = cakes.find(cake => cake.id == cakeId)
-        console.log('uzmilita', cakeObject)
-        setCake(cakeObject)
-        setCakePrice(cakeObject.options[0]?.price)
-    }, [])
 
     return (
         <div className='flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus'>
@@ -68,7 +66,12 @@ const CakeInformation = () => {
                                         {/* Price and add to cart */}
                                         <div className='flex flex-col md:flex-row md:justify-evenly mb-4'>
                                             <p className='h4 text-black mb-4 md:mb-0'>${cakePrice}</p>
-                                            <button className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 flex items-center'>Add to cart</button>
+                                            <button 
+                                                className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 flex items-center'
+                                                onClick={() => handleAddToCart(cake)}
+                                            >
+                                                Add to cart
+                                            </button>
                                         </div>
                                         
                                         <p className='text-black'>{cake.description}</p>
