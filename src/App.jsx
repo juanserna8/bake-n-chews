@@ -5,7 +5,10 @@ import {
   useLocation
 } from 'react-router-dom';
 
+import { ToastContainer } from 'react-toastify';
+
 import './css/style.scss';
+import 'react-toastify/dist/ReactToastify.css'
 
 import AOS from 'aos';
 
@@ -41,6 +44,7 @@ function App() {
   return (
     <>
       <Routes>
+        {/* <ToastContainer /> */}
         <Route exact path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cakes" element={<Cakes />} />
