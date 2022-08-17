@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Cake from '/images/cake.jpg';
 import Lemon from "/images/lemon.jpg";
@@ -21,19 +22,20 @@ function BusinessDescription() {
 
           {/* Buttons section */}
           <div className='grid gap-4 sm:flex sm:justify-evenly sm:px-10'>
+            <Link to="/cakes" className="btn-sm bg-yellowHeader-100 border border-yellowBorder-100 sm:w-[15rem]">
+              <button 
+                  className='text-black'  
+              >
+                  ONLINE SHOP
+              </button>
+            </Link>
+            <Link to="/contact" className="btn-sm bg-yellowHeader-100 border border-yellowBorder-100 sm:w-[15rem]">
             <button 
-                className='btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 sm:w-[15rem]'
-                onClick={() => console.log('Go to online shop')}  
-            >
-                ONLINE SHOP
-            </button>
-
-            <button 
-                className='btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 sm:w-[15rem]'
-                onClick={() => console.log('Go to online shop')}  
+                className=' text-black'  
             >
                 CUSTOMIZE YOUR CAKE
             </button>
+            </Link>
           </div>
 
           {/* Images grid */}

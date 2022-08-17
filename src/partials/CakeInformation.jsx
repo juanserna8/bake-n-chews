@@ -94,17 +94,6 @@ const CakeInformation = () => {
                                     </div>
 
                                 </div>
-                                
-                                <div className='information-card flex flex-col h-full'>
-                                    <div className='buttons-container flex justify-between'>
-                                        {/* <button 
-                                            className='btn-sm text-white bg-teal-500 hover:bg-teal-400 hover:text-black hover:border hover:border-white h-1/5 my-2'
-                                            onClick={() => handleAddToCart(cake)}
-                                        >
-                                            Add to cart
-                                        </button> */}
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </section>

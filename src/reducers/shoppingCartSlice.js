@@ -13,7 +13,6 @@ export const shoppingCartSlice = createSlice({
     },
     reducers: {
         addToCart(state, action) {
-            //Check if we already have an item in the cart
             //Current is being used to show the cart without trouble shooting with Redux
             const cart = current(state.cart)
             console.log({cart})
@@ -109,10 +108,38 @@ export const shoppingCartSlice = createSlice({
                 toast.info(`Increased ${action.payload.size} ${action.payload.name} cart quantity`, {
                     position: "bottom-left"})
             }
+            localStorage.setItem("cartItems", JSON.stringify(state.cart))
+        },
+
+        // Clear cart
+        clearCart(state, action) {
+            state.cart = [];
+            toast.error(`The cart has been cleared`, {
+                position: "bottom-left"
+            });
+            localStorage.setItem("cartItems", JSON.stringify(state.cart))
+        },
+
+        // Get Total value of the cart
+        getTotals(state, action) {
+            let {total, quantity} = state.cart.reduce((cartTotal, cartItem) => {
+                const { price, cartQuantity } = cartItem;
+                const itemTotal = price * cartQuantity;
+
+                cartTotal.total += itemTotal
+                cartTotal.quantity += cartQuantity
+
+                return cartTotal
+            }, {
+                total: 0,
+                quantity: 0
+            });
+            state.cartTotalQuantity = quantity;
+            state.cartTotalAmount = total
         }
     }
 });
 
 
-export const { addToCart, removeFromCart, decreaseQuantity, increaseQuantity } = shoppingCartSlice.actions;
+export const { addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, getTotals } = shoppingCartSlice.actions;
 export default shoppingCartSlice.reducer

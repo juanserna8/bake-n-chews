@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Dropdown from '../utils/Dropdown';
 import Transition from '../utils/Transition';
 import logo from '/images/logoHeader.png'
+import { useSelector } from "react-redux";
 
 function Header() {
 
+  const {cartTotalQuantity} = useSelector(state => state.shoppingCart)
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const trigger = useRef(null);
@@ -59,7 +60,7 @@ function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-5">
             {/* Logo */}
-            <Link to="/" className="block" aria-label="Cruip">
+            <Link to="/about" className="block" aria-label="Cruip">
               <img 
                 src={logo} 
                 alt="El Mohan Logo" 
@@ -86,13 +87,17 @@ function Header() {
 
             {/* Desktop CTA on the right */}
             <ul className="flex justify-end flex-wrap items-center">
-              <li>
-                <Link to="/cart" className="btn-sm text-white ml-6 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                <svg className="h-6 w-6 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                </svg>
-
+              <li className='flex items-center'>
+                <Link to="/cart" className="btn-sm text-white ml-6 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2">
+                  <svg className="h-6 w-6 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
                 </Link>
+                {cartTotalQuantity > 0 && (
+                  <div className='-ml-7 -mt-4'>
+                    <span className='ml-2 rounded-full px-1 text-white bg-redComplementary-100'>{cartTotalQuantity}</span>
+                  </div>
+                )}
               </li>
             </ul>
 
@@ -143,9 +148,21 @@ function Header() {
                     <li>
                       <Link to="/contact" className="flex py-2">Contact us</Link>
                     </li>
+                    <li className='py-2'>
+                      <Link to="/cart" className="text-black font-medium text-sm flex">
+                        <svg className="h-6 w-6 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        {cartTotalQuantity > 0 && (
+                          <div className=''>
+                            <span className='rounded-full px-1 text-white bg-redComplementary-100'>{cartTotalQuantity}</span>
+                          </div>
+                        )}
+                      </Link>
+                    </li>
                    
                     <li>
-                      <Link to="/contact" className="font-medium w-full inline-flex items-center justify-center px-4 py-2 my-2 rounded btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 transition duration-150 ease-in-out">Order online</Link>
+                      <Link to="/contact" className="font-medium w-full inline-flex items-center justify-center px-4 py-2 my-2 rounded btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 transition duration-150 ease-in-out">Customize your cake</Link>
                     </li>
                   </ul>
                 </div>
