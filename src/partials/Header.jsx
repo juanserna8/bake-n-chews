@@ -60,7 +60,7 @@ function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-5">
             {/* Logo */}
-            <Link to="/about" className="block" aria-label="Cruip">
+            <Link to="/" className="block" aria-label="Cruip">
               <img 
                 src={logo} 
                 alt="El Mohan Logo" 
@@ -75,7 +75,7 @@ function Header() {
             {/* Desktop menu links */}
             <ul className="flex grow flex-wrap items-center font-medium">
               <li>
-                <Link to="/about" className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">About</Link>
+                <Link to="/" className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">Home</Link>
               </li>
               <li>
                 <Link to="/cakes" className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out">Cakes</Link>
@@ -140,7 +140,7 @@ function Header() {
                   {/* Links */}
                   <ul className='text-black py-2 my-4 border-t border-yellowBorder-100'>
                     <li>
-                      <Link to="/about" className="flex py-2">About</Link>
+                      <Link to="/" className="flex py-2">Home</Link>
                     </li>
                     <li>
                       <Link to="/cakes" className="flex py-2">Cakes</Link>

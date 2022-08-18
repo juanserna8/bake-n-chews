@@ -1,9 +1,9 @@
 
 [
     {
-        "name": "Genovese",
+        "name": "Tres leches Cake",
         "id": 1,
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
+        "description": "Also called as Genovese, the Tres Leches Cake is a light cake soaked with a mixture of three milks: condensed milk, evaporated milk and heavy cream.",
         "image": "/images/cake.jpg",
         "options":
             [
@@ -30,7 +30,7 @@
     {
         "name": "Devils Food Cake",
         "id": 2,
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
+        "description": "It is the only chocolate cake that is so sinfully delicious that can be known as the Devil's food. It is a rich chocolate cake that is held together by a mouth-watering soft icing.",
         "image": "/images/devils.jfif",
         "options":
             [
@@ -57,7 +57,7 @@
     {
         "name": "Apricot & Rosemary",
         "id": 3,
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
+        "description": "Heavenly sponge cake moistened with an apricot and rosemary syrup, topped with caramelized appricots. Its fresh taste would be perfect for your celebrations and its decoration would fit any event's theme.",
         "image": "/images/apricot.jpeg",
         "options":
             [
@@ -84,7 +84,7 @@
     {
         "name": "Carrot Cake",
         "id": 4,
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
+        "description": "Also known as passion cake, it brings the delicious taste of carrots mixed into the butter, with a white cream cheese frosting. Enjoy it with walnuts or pecans and seasonal spices.",
         "image": "/images/carrot.jpeg",
         "options":
             [
@@ -111,7 +111,7 @@
     {
         "name": "Vanilla Cake",
         "id": 5,
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
+        "description": "For the ones that love the classic options. Popular since the 19th century, it offers the pleasant flavour of the vanilla with the fresh feeling of the frosting.",
         "image": "/images/vanilla.jpg",
         "options":
             [
@@ -138,7 +138,7 @@
     {
         "name": "Lemon Cake",
         "id": 6,
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, repudiandae. Ab tempore animi voluptatem.",
+        "description": "Its 'lemmony' flavour causes a big temptation to grab another slice. This 2 layers cake comes with a not-too-sweet lemon frosting that will make you love it. Topped with seasonal ingredients.",
         "image": "/images/lemon.jpg",
         "options":
             [

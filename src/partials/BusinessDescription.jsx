@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Cake from '/images/cake.jpg';
-import Lemon from "/images/lemon.jpg";
-import AboutImage02 from '../images/about-grid-02.jpg';
-import AboutImage04 from '../images/about-grid-04.jpg';
-import Vanilla from "/images/vanilla.jpg";
-import Carrot from "/images/carrot.jpeg";
-import Tres from "/images/personalized/tres-leches.jpeg";
+import Celebration from '/images/celebration.jpg';
+import Slice from '/images/slice.jpg'
+import Stand from "/images/stand.jpg";
+import Coffee from "/images/coffee.jpg";
+import Wood from "/images/wood.jpg"
+import Bake from "/images/bake.jpg"
 
 function BusinessDescription() {
   return (
@@ -40,12 +39,12 @@ function BusinessDescription() {
 
           {/* Images grid */}
           <div className="grid grid-cols-12 gap-3 mt-12 md:mt-20" data-aos-id-gallery>
-            <img className="col-span-6 md:col-span-4 object-cover h-[16.5rem]" src={Cake} width="360" height="270" alt="About grid 01" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" />
-            <img className="col-span-6 md:col-span-3 object-cover h-[16.5rem]" src={AboutImage02} width="270" height="270" alt="About grid 02" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="100" />
-            <img className="col-span-6 md:col-span-5 object-cover h-[16.5rem]" src={Lemon} width="450" height="270" alt="About grid 03" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="200" />
-            <img className="col-span-6 md:col-span-3 object-cover h-[16.5rem]" src={AboutImage04} width="270" height="270" alt="About grid 04" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="300" />
-            <img className="col-span-6 md:col-span-5 object-cover h-[16.5rem]" src={Carrot} width="450" height="270" alt="About grid 05" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="400" />
-            <img className="col-span-6 md:col-span-4 object-cover h-[16.5rem]" src={Tres} width="360" height="270" alt="About grid 06" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="500" />
+            <img className="col-span-6 md:col-span-4 object-cover h-[16.5rem]" src={Bake} width="360" height="270" alt="About grid 01" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" />
+            <img className="col-span-6 md:col-span-3 object-cover h-[16.5rem]" src={Slice} width="270" height="270" alt="About grid 02" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="100" />
+            <img className="col-span-6 md:col-span-5 object-cover h-[16.5rem]" src={Stand} width="450" height="270" alt="About grid 03" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="200" />
+            <img className="col-span-6 md:col-span-3 object-cover h-[16.5rem]" src={Coffee} width="270" height="270" alt="About grid 04" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="300" />
+            <img className="col-span-6 md:col-span-4 object-cover h-[16.5rem]" src={Celebration} width="360" height="270" alt="About grid 06" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="500" />
+            <img className="col-span-6 md:col-span-5 object-cover h-[16.5rem]" src={Wood} width="450" height="270" alt="About grid 05" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="400" />
           </div>
 
       </div>
