@@ -9,9 +9,9 @@ const CakeCard = ({cake}) => {
             </figure>
             <p className='text-black h4 mb-4 text-center'>{cake.name}</p>
             <p className='text-black text-center mb-4'>{cake.description}</p>
-            <button className='w-1/2 flex mx-auto mb-2 btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100'>
-            <Link to={`/cakes/${cake.id}`} className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-5 flex items-center transition duration-150 ease-in-out">
-                Read more
+            <button className='w-1/2 md:w-2/3 flex mx-auto mb-2 btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100'>
+            <Link to={`/cakes/${cake.id}`} className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-2 flex items-center transition duration-150 ease-in-out">
+                View product
             </Link>
             </button>
         </div>
