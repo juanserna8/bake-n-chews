@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Celebration from '/images/celebration.jpg';
-import Slice from '/images/slice.jpg'
-import Stand from "/images/stand.jpg";
-import Coffee from "/images/coffee.jpg";
-import Wood from "/images/wood.jpg"
-import Bake from "/images/bake.jpg"
+import Celebration from '/images/celebration.webp';
+import Slice from '/images/slice.webp'
+import Stand from "/images/stand.webp";
+import Coffee from "/images/coffee.webp";
+import Wood from "/images/wood.webp"
+import Bake from "/images/bake.webp"
+import { useState } from 'react';
 
 function BusinessDescription() {
+  const [imageLoaded, setImageLoaded] = useState(false) 
+ 
   return (
     <section>
       <div className="mx-auto px-4 sm:px-6">
@@ -38,13 +41,31 @@ function BusinessDescription() {
           </div>
 
           {/* Images grid */}
-          <div className="grid grid-cols-12 gap-3 mt-12 md:mt-20" data-aos-id-gallery>
-            <img className="col-span-6 md:col-span-4 object-cover h-[16.5rem]" src={Bake} width="360" height="270" alt="About grid 01" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" />
-            <img className="col-span-6 md:col-span-3 object-cover h-[16.5rem]" src={Slice} width="270" height="270" alt="About grid 02" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="100" />
-            <img className="col-span-6 md:col-span-5 object-cover h-[16.5rem]" src={Stand} width="450" height="270" alt="About grid 03" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="200" />
-            <img className="col-span-6 md:col-span-3 object-cover h-[16.5rem]" src={Coffee} width="270" height="270" alt="About grid 04" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="300" />
-            <img className="col-span-6 md:col-span-4 object-cover h-[16.5rem]" src={Celebration} width="360" height="270" alt="About grid 06" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="500" />
-            <img className="col-span-6 md:col-span-5 object-cover h-[16.5rem]" src={Wood} width="450" height="270" alt="About grid 05" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="400" />
+          <div className="grid grid-cols-12 gap-3 mt-12 md:mt-20 mx-auto justify-items-center" data-aos-id-gallery>
+            <img 
+              className={`ease-in duration-150 ${imageLoaded ? 'col-span-6 md:col-span-4 lg:col-span-4 object-cover h-[16.5rem] xl:w-[25rem] xl:hover:object-contain' : 'hidden'}`} src={Bake} width="360" height="270" alt="About grid 01" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]"
+              onLoad={() => setImageLoaded(true)} 
+            />
+            <img 
+              className={`ease-in duration-150 ${imageLoaded ? 'col-span-6 md:col-span-3 lg:col-span-4 object-cover h-[16.5rem] xl:w-[25rem] xl:hover:object-contain' : 'hidden'}`} src={Slice} width="270" height="270" alt="About grid 02" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="100" 
+              onLoad={() => setImageLoaded(true)}
+            />
+            <img 
+              className={`ease-in duration-150 ${imageLoaded ? 'col-span-6 md:col-span-5 lg:col-span-4 object-cover h-[16.5rem] xl:w-[25rem] xl:hover:object-contain' : 'hidden'}`} src={Stand} width="450" height="270" alt="About grid 03" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="200" 
+              onLoad={() => setImageLoaded(true)}
+            />
+            <img 
+              className={`ease-in duration-150 ${imageLoaded ? 'col-span-6 md:col-span-3 lg:col-span-4 object-cover h-[16.5rem] xl:w-[25rem] xl:hover:object-contain' : 'hidden'}`} src={Coffee} width="270" height="270" alt="About grid 04" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="300" 
+              onLoad={() => setImageLoaded(true)}
+            />
+            <img 
+              className={`ease-in duration-150 ${imageLoaded ? 'col-span-6 md:col-span-4 lg:col-span-4 object-cover h-[16.5rem] xl:w-[25rem] xl:hover:object-contain' : 'hidden'}`} src={Celebration} width="360" height="270" alt="About grid 06" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="500" 
+              onLoad={() => setImageLoaded(true)}
+            />
+            <img 
+              className={`ease-in duration-150 ${imageLoaded ? 'col-span-6 md:col-span-5 lg:col-span-4 object-cover h-[16.5rem] xl:w-[25rem] xl:hover:object-contain' : 'hidden'}`} src={Wood} width="450" height="270" alt="About grid 05" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="400" 
+              onLoad={() => setImageLoaded(true)}
+            />
           </div>
 
       </div>

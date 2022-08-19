@@ -13,13 +13,13 @@ function TestimonialsCarousel() {
       link: '#0'
     },
     {
-      quote: '“ Not only in my career but in education as well, I feel grateful that Simple pushed me to expand my horizons and strive to accomplish more.“',
-      name: 'Greg Sebastian',
+      quote: '“I loved the way Andrea uses the different colours, they all make it look overall the perfect cake“',
+      name: 'Pia Poser',
       link: '#0'
     },
     {
-      quote: '“ I feel grateful that Simple pushed me to expand my horizons and strive to accomplish more. When we first met Appy, we were skeptical for no reason.“',
-      name: 'Dominik Prasad',
+      quote: '“First time trying a tres leches cake. It is a real delight. Must try!“',
+      name: 'Lieth',
       link: '#0'
     }
   ]);

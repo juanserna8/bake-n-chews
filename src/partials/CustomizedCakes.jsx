@@ -1,11 +1,11 @@
 import React from 'react';
 
 import tresLeches from "/images/personalized/tres-leches.jpeg"
-import Pink from "/images/personalized/pink.jpg"
-import Levels from "/images/personalized/levels.jpg"
-import Brown from "/images/personalized/brown.jpg"
-import Fruits from "/images/personalized/fruits.jpg"
-import Chocolate from "/images/personalized/chocolate.jpg"
+import Pink from "/images/personalized/pink.webp"
+import Levels from "/images/personalized/levels.webp"
+import Brown from "/images/personalized/brown.webp"
+import Fruits from "/images/personalized/fruits.webp"
+import Chocolate from "/images/personalized/chocolate.webp"
 
 function CustomizedCakes() {
   return (
