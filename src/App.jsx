@@ -5,17 +5,19 @@ import {
   useLocation
 } from 'react-router-dom';
 
+import { ToastContainer } from 'react-toastify';
+
 import './css/style.scss';
+import 'react-toastify/dist/ReactToastify.css'
 
 import AOS from 'aos';
 
-import Home from './pages/Home';
-import Testimonials from './pages/Testimonials';
+import Contact from './pages/Contact';
 import Cakes from './pages/Cakes';
-import BlogPost from './pages/BlogPost';
-import About from './pages/About';
+import CakeInformation from './partials/CakeInformation'
+
+import Home from './pages/Home';
 import Cart from './pages/Cart';
-import Help from './pages/Help';
 import PageNotFound from './pages/PageNotFound';
 
 function App() {
@@ -39,14 +41,13 @@ function App() {
 
   return (
     <>
+      <ToastContainer />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/cakes" element={<Cakes />} />
-        <Route path="/blog-post" element={<BlogPost />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/cakes/:cakeId" element={<CakeInformation />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/help" element={<Help />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
