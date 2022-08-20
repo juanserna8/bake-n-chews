@@ -2,17 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import cakes from '../assets/json/cakes.json'
-import NewsImage01 from '../images/news-01.jpg';
-import NewsImage02 from '../images/news-02.jpg';
-import NewsImage03 from '../images/news-03.jpg';
-import NewsImage04 from '../images/news-04.jpg';
-import NewsImage05 from '../images/news-05.jpg';
-import NewsImage06 from '../images/news-06.jpg';
-import NewsAuthor01 from '../images/news-author-01.jpg';
-import NewsAuthor03 from '../images/news-author-03.jpg';
-import NewsAuthor04 from '../images/news-author-04.jpg';
-import NewsAuthor05 from '../images/news-author-05.jpg';
-import NewsAuthor06 from '../images/news-author-06.jpg';
 import CakeCard from './CakeCard';
 
 function CakeList() {

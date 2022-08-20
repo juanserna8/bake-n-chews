@@ -15,10 +15,9 @@ import AOS from 'aos';
 import Contact from './pages/Contact';
 import Cakes from './pages/Cakes';
 import CakeInformation from './partials/CakeInformation'
-import BlogPost from './pages/BlogPost';
+
 import Home from './pages/Home';
 import Cart from './pages/Cart';
-import Help from './pages/Help';
 import PageNotFound from './pages/PageNotFound';
 
 function App() {
@@ -48,9 +47,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cakes" element={<Cakes />} />
         <Route path="/cakes/:cakeId" element={<CakeInformation />} />
-        <Route path="/blog-post" element={<BlogPost />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/help" element={<Help />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
