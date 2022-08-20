@@ -15,7 +15,7 @@ export const shoppingCartSlice = createSlice({
         addToCart(state, action) {
             //Current is being used to show the cart without trouble shooting with Redux
             const cart = current(state.cart)
-            console.log({cart})
+            // console.log({cart})
             //Create the auxiliar object that will group productId and optionId, with the aim to manage
             //the cart as an array instead of manage it as an array.
             const auxiliarObject = mapToObject(cart, (item) => item.itemId )

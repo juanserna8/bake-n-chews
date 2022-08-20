@@ -24,12 +24,13 @@ const CakeInformation = () => {
 
     const { cakeId } = useParams()
 
-    useEffect(() => {
+    useEffect((cake) => {
         // const cakeArray = cakes.filter(cake => cake.id == cakeId)
         // console.log(cakeArray)
         const cakeObject = cakes.find(cake => cake.id == cakeId)
         setCake(cakeObject)
         setCakePrice(cakeObject.options[0]?.price)
+        setSelected(cakeObject.options[0]?.id)
     }, [])
 
     // This function is used to add items to the cart
