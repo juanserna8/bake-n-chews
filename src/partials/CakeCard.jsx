@@ -1,65 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../reducers/shoppingCartSlice';
+import { Link } from 'react-router-dom';
 
 const CakeCard = ({cake}) => {
-    //Initial state for price, which is the small's size price
-    let [cakePrice, setCakePrice] = useState(cake.options[0]?.price)
-    const [selected, setSelected] = useState()
-
-    const dispatch = useDispatch();
-
-    function handleClick(index, price) {
-        //All functions triggered by the click have been grouped in handle click
-        setSelected(index)
-        setCakePrice(price)
+    function truncateString(str, num) {
+        if (num <= 90) {
+            return str.slice(0, num) + '...'
+        };
     }
-
-    const handleAddToCart = (cake) => {
-        dispatch(addToCart(cake, cake.options[selected]))
-        console.log(cake, cake.options[selected])
-    }
-
+    
     return (
-        <div className='mb-4'>
-            <figure className='relative mb-4 pb-9/16'>
-                <img 
-                    className='absolute inset-0 w-full h-full object-cover' 
-                    src={cake.image} 
-                    alt="genovese pic" 
-                />
+        <div className='w-full p-2'>
+            <figure className='w-full h-[20rem] mb-4'>
+                <img src={cake.image} alt={cake.name} className='h-[20rem] w-[24rem] object-cover' />
             </figure>
-                <div className='information-card flex flex-col h-full'>
-                    {/*Every section has its identifier I.e. information card */}
-                    <div className='title-and-price-card flex justify-between'>
-                        <div className='title-container'>
-                            <h3 className='h4 font-red-hat-display mb-2'>{ cake.name}</h3>
-                            <p className='text-gray-600 dark:text-gray-400 grow'>{ cake.description}</p>
-                        </div>
-                        <h3 className='h4 font-red-hat-display'>${cakePrice}</h3>
-                    </div>
-                    <div className='buttons-container flex justify-between mt-4'>
-                        <div className='flex flex-col'>{cake.options.map((cakeOption, index) => {
-                            return (
-                                <div key={index} className='flex justify-start items-center my-2'>
-                                    <button 
-                                        className={index == selected ? 'btn-sm text-white bg-redComplementary-100' : 'btn-sm text-white bg-teal-500 hover:bg-teal-400'}
-                                        onClick={() => handleClick(index, cakeOption.price)}  
-                                    >
-                                        {`${cakeOption.size} ${cakeOption.people}`}
-                                    </button>
-                                </div>
-                            )
-                            })}
-                        </div>
-                        <button 
-                            className='btn-sm text-white bg-teal-500 hover:bg-teal-400 hover:text-black hover:border hover:border-white h-1/5 my-2'
-                            onClick={() => handleAddToCart(cake)}
-                        >
-                            Add to cart
-                        </button>
-                    </div>
-                </div>
+            <p className='text-black h4 mb-4 text-center'>{cake.name}</p>
+            <p className='text-black text-center mb-4'>{truncateString( cake.description,90)}</p>
+            <button className='w-1/2 md:w-2/3 flex mx-auto mb-2 btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100'>
+            <Link to={`/cakes/${cake.id}`} className="text-black font-marcellus hover:text-gray-900 dark:text-black dark:hover:text-gray-100 px-2 flex items-center transition duration-150 ease-in-out">
+                View product
+            </Link>
+            </button>
         </div>
     );
 }

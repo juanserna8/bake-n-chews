@@ -75,7 +75,19 @@ module.exports = {
         },
         redComplementary: {
           100: '#BA3A40'
-        }
+        },
+        yellowHeader: {
+          100: '#d1cabf'
+        },
+        grayHeader: {
+          100: '#BFC6D1'
+        },
+        generalYellow: {
+          100: '#faf4eb'
+        },
+        yellowBorder: {
+          100: '#8a6a2e'
+        },
       },
       outline: {
         blue: '2px solid rgba(0, 112, 244, 0.5)',
@@ -89,6 +101,8 @@ module.exports = {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         'red-hat-display': ['"Red Hat Display"', 'sans-serif'],
+        nanum: "'Nanum Myeongjo', serif",
+        marcellus: "'Marcellus', serif",
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1.5' }],

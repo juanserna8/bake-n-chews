@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '/images/logo.png'
 
 function Footer() {
   return (
 <footer className="relative">
     <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="py-12 md:py-16 border-t border-gray-200 dark:border-gray-800 -mt-px">
+        <div className="py-12 md:py-16 border-t -mt-px">
             
             {/* Footer illustration */}
             <div className="pointer-events-none -z-1" aria-hidden="true">
@@ -21,26 +22,17 @@ function Footer() {
             </div>
 
             {/* Top area: Blocks */}
-            <div className="grid md:grid-cols-12 gap-8 lg:gap-20 mb-8 md:mb-12">
+            <div className="mb-8 md:mb-12">
 
                 {/* 1st block */}
-                <div className="md:col-span-2 lg:col-span-3">
+                <div className="mx-auto text-center">
                     {/* Logo */}
                     <Link className="inline-block" to="/" aria-label="Cruip">
-                        <svg className="w-8 h-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="flogo_a">
-                                    <stop stopColor="#3ABAB4" offset="0%" />
-                                    <stop stopColor="#7F9CF5" offset="100%" />
-                                </linearGradient>
-                                <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="flogo_b">
-                                    <stop stopColor="#3ABAB4" offset="0%" />
-                                    <stop stopColor="#3ABAB4" stopOpacity="0" offset="100%" />
-                                </linearGradient>
-                            </defs>
-                            <path d="M32 16h-8a8 8 0 10-16 0H0C0 7.163 7.163 0 16 0s16 7.163 16 16z" fill="url(#flogo_a)" />
-                            <path d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16h8a8 8 0 1016 0h8z" fill="url(#flogo_b)" />
-                        </svg>
+                    <img 
+                        src={logo} 
+                        alt="El Mohan Logo" 
+                        className='object-contain h-16 rounded-full '  
+                    />
                     </Link>
                 </div>
                 
@@ -53,7 +45,7 @@ function Footer() {
                 <ul className="flex mb-4 md:order-2 md:ml-4 md:mb-0">
                     {/* Facebook */}
                     <li className="ml-4">
-                        <a className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out" href="#0" aria-label="Facebook">
+                        <a className="flex justify-center items-center text-gray-600 bg-generalYellow-100 hover:underline hover:bg-teal-600 hover:text-white rounded-full transition duration-150 ease-in-out" href="#0" aria-label="Facebook">
                             <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14.023 24L14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257z" />
                             </svg>
@@ -61,7 +53,7 @@ function Footer() {
                     </li>
                     {/* Instagram */}
                     <li className="ml-4">
-                        <a className="flex justify-center items-center text-white bg-teal-500 dark:text-teal-500 dark:bg-gray-800 hover:underline hover:bg-teal-600 rounded-full transition duration-150 ease-in-out" href="#0" aria-label="Instagram">
+                        <a className="flex justify-center items-center text-gray-600 bg-generalYellow-100 hover:underline hover:bg-teal-600 hover:text-white rounded-full transition duration-150 ease-in-out" href="#0" aria-label="Instagram">
                             <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="20.145" cy="11.892" r="1" />
                                 <path d="M16 20c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-6c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z" />
