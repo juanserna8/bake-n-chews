@@ -34,23 +34,23 @@ function Header() {
   });
 
   // Handle light modes
-  const [darkMode, setDarkMode] = useState(() => {
-    const dark = localStorage.getItem('dark-mode');
-    if (dark === null) {
-      return true;
-    } else {
-      return dark === 'true';
-    }
-  });
+  // const [darkMode, setDarkMode] = useState(() => {
+  //   const dark = localStorage.getItem('dark-mode');
+  //   if (dark === null) {
+  //     return true;
+  //   } else {
+  //     return dark === 'true';
+  //   }
+  // });
 
-  useEffect(() => {
-    localStorage.setItem('dark-mode', darkMode)
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode]);  
+  // useEffect(() => {
+  //   localStorage.setItem('dark-mode', darkMode)
+  //   if (darkMode) {
+  //     document.documentElement.classList.add('dark')
+  //   } else {
+  //     document.documentElement.classList.remove('dark')
+  //   }
+  // }, [darkMode]);  
 
   return (
     <header className="absolute w-full z-30 bg-yellowHeader-100 border-b border-yellowBorder-100">
@@ -120,7 +120,7 @@ function Header() {
             <Transition
               show={mobileNavOpen}
               tag="ul"
-              className="fixed top-0 h-screen z-20 left-0 w-full max-w-sm -ml-16 overflow-scroll bg-white dark:bg-gray-900 shadow-lg"
+              className="fixed top-0 h-screen z-20 left-0 w-full max-w-sm -ml-16 overflow-scroll bg-generalYellow-100 shadow-lg"
               enter="transition ease-out duration-200 transform"
               enterStart="opacity-0 -translate-x-full"
               enterEnd="opacity-100 translate-x-0"

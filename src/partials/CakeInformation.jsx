@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addToCart } from '../reducers/shoppingCartSlice';
@@ -30,7 +31,7 @@ const CakeInformation = () => {
         const cakeObject = cakes.find(cake => cake.id == cakeId)
         setCake(cakeObject)
         setCakePrice(cakeObject.options[0]?.price)
-        setSelected(cakeObject.options[0]?.id)
+        setSelected(0)
     }, [])
 
     // This function is used to add items to the cart
@@ -92,6 +93,13 @@ const CakeInformation = () => {
                                                 )
                                             })}
                                         </div>
+
+                                        <button className='btn btn-sm text-gray-400 w-full flex items-center'>
+                                            <Link className='flex items-center' to={'/cakes'}>
+                                                <svg className="h-8 w-8 text-gray-400 mr-2"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="5" y1="12" x2="19" y2="12" />  <line x1="5" y1="12" x2="9" y2="16" />  <line x1="5" y1="12" x2="9" y2="8" /></svg>
+                                                Continue shopping
+                                            </Link>
+                                        </button>
                                     </div>
 
                                 </div>

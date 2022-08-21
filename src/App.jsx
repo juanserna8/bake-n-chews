@@ -41,15 +41,15 @@ function App() {
 
   return (
     <>
-      <ToastContainer />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cakes" element={<Cakes />} />
-        <Route path="/cakes/:cakeId" element={<CakeInformation />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+        <ToastContainer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cakes" element={<Cakes />} />
+          <Route path="/cakes/:cakeId" element={<CakeInformation />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
     </>
   );
 }
