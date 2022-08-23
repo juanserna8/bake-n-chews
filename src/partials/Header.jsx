@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Transition from '../utils/Transition';
 import logo from '/images/logoHeader.png'
 import { useSelector } from "react-redux";
@@ -33,29 +34,14 @@ function Header() {
     return () => document.removeEventListener('keydown', keyHandler);
   });
 
-  // Handle light modes
-  // const [darkMode, setDarkMode] = useState(() => {
-  //   const dark = localStorage.getItem('dark-mode');
-  //   if (dark === null) {
-  //     return true;
-  //   } else {
-  //     return dark === 'true';
-  //   }
-  // });
-
-  // useEffect(() => {
-  //   localStorage.setItem('dark-mode', darkMode)
-  //   if (darkMode) {
-  //     document.documentElement.classList.add('dark')
-  //   } else {
-  //     document.documentElement.classList.remove('dark')
-  //   }
-  // }, [darkMode]);  
-
   return (
     <header className="absolute w-full z-30 bg-yellowHeader-100 border-b border-yellowBorder-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20">
+        <motion.div 
+         initial={{ y:-100 }}
+         animate={{ y:0 }}
+         transition={{ duration: 0.5 }}
+         className="flex items-center justify-between h-20">
 
           {/* Site branding */}
           <div className="shrink-0 mr-5">
@@ -89,7 +75,7 @@ function Header() {
             <ul className="flex justify-end flex-wrap items-center">
               <li className='flex items-center'>
                 <Link to="/cart" className="btn-sm text-white ml-6 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2">
-                  <svg className="h-6 w-6 text-black"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-6 w-6 text-black hover:text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
                   </svg>
                 </Link>
@@ -171,7 +157,7 @@ function Header() {
 
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </header>
   );

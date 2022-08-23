@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'
 
 import cakes from '../assets/json/cakes.json'
 import CakeCard from './CakeCard';
@@ -10,11 +11,21 @@ function CakeList() {
     <section className='mt-[8rem]'>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10">
 
-        <div className="text-center">
+        <motion.div 
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1}}
+          transition={{ duration: 0.7}}
+          className="text-center"
+        >
             <h2 className="h2 text-black">Our Cakes</h2>
-        </div>
+        </motion.div>
 
-        <div className="mt-[4rem] md:mt-[6rem]">
+        <motion.div 
+          initial={{ x: '-100vw' }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.8}}
+          className="mt-[4rem] md:mt-[6rem]"
+        >
           <div className="lg:flex lg:justify-between">
 
             {/* Main content */}
@@ -39,7 +50,7 @@ function CakeList() {
             </div>
 
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

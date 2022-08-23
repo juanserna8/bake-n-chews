@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion'
 
 import tresLeches from "/images/personalized/tres-leches.jpeg"
 import Pink from "/images/personalized/pink.webp"
@@ -14,13 +15,27 @@ function CustomizedCakes() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 ">
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
           <div className="w-full mx-auto text-center">
-            <h2 className="h2 text-black mb-8" data-aos="fade-down" data-aos-delay="150">
+            <motion.h2 
+              initial={{ scale: 1.2 }}
+              animate={{ scale: 1}}
+              transition={{ duration: 0.4}}
+              className="h2 text-black mb-8" data-aos="fade-down" data-aos-delay="150">
               Want a customized cake?
-            </h2>
-            <p className='h4 text-black mb-8'>Request a quote</p>
+            </motion.h2>
+            <motion.p 
+              initial={{ x: '-100vw' }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.8}}
+              className='h4 text-black mb-8'
+            >Request a quote</motion.p>
             
             {/* Explanation and images */}
-            <div className='flex flex-col md:grid md:grid-cols-5 md:gap-10 md:items-center md:pt-8'>
+            <motion.div 
+              initial={{ x: '-100vw' }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.8}}
+              className='flex flex-col md:grid md:grid-cols-5 md:gap-10 md:items-center md:pt-8'
+            >
               <div className='col-span-2 mb-8 md:mb-0'>
                 <p className="text-xl text-black" data-aos="fade-down" data-aos-delay="150">
                   All of our personalized cakes are made from scratch with best quality local and seasonal ingredients. They can be made to suit any party or event theme, from birthdays to baby showers. 
@@ -39,7 +54,7 @@ function CustomizedCakes() {
                 <img className="col-span-6 md:col-span-5 object-cover min-h-[16rem] max-h-[16rem]" src={Brown} width="450" height="270" alt="About grid 05" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="400" />
                 <img className="col-span-6 md:col-span-4 object-cover min-h-[16rem] max-h-[16rem]" src={Fruits} width="360" height="270" alt="About grid 06" data-aos="fade-down" data-aos-anchor="[data-aos-id-gallery]" data-aos-delay="500" />
               </div>
-            </div>
+            </motion.div>
             
           </div>
         </div>

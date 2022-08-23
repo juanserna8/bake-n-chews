@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import logo from '/images/logo.png'
 
@@ -11,7 +12,13 @@ function EverAbout() {
           <div className="text-center">
             <div className="relative flex justify-center items-center">
               <div className="relative inline-flex items-start" data-aos="">
-                  <img className="h-[20rem] object-contain" src={logo} alt="About hero" />
+                  <motion.img 
+                    initial={{ opacity:0 }}
+                    animate={{ opacity:1 }}
+                    transition={{ duration: 2 }}
+                    className="h-[20rem] object-contain animate-beat" 
+                    src={logo} alt="About hero" 
+                  />
                 <div className="" aria-hidden="true"></div>
               </div>
             </div>
