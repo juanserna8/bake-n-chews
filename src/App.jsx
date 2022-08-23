@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { ToastContainer } from 'react-toastify';
+import { AnimatePresence } from 'framer-motion';
 
 import './css/style.scss';
 import 'react-toastify/dist/ReactToastify.css'
@@ -42,7 +43,7 @@ function App() {
   return (
     <>
         <ToastContainer />
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cakes" element={<Cakes />} />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -55,31 +56,58 @@ const CakeInformation = () => {
                             {/* Body section */}
                             <div className="mt-[2rem] md:mt-[4rem]">
                                 <div className='grid grid-cols-1 md:grid-cols-2 md:gap-8 justify-center md:w-2/3 mx-auto'>
-                                    <figure className='md:col-span-1 relative mb-[6rem] pb-9/16 self-center'>
+                                    <motion.figure 
+                                        initial={{ x: '-100vw' }}
+                                        animate={{ x: 0 }}
+                                        transition={{ duration: 0.8}}
+                                        className='md:col-span-1 relative mb-[6rem] pb-9/16 self-center'
+                                    >
                                         <img 
                                             className='absolute mx-auto inset-0 w-[20rem] h-[16.5rem] object-cover' 
                                             src={cake?.image} 
                                             alt="genovese pic" 
                                         />
-                                    </figure>
+                                    </motion.figure>
                                     {/* Cake information */}
                                     <div className="text-center pt-4 md:pt-0 px-2">
-                                        <p className="h3 text-black text-center mb-4 md:mb-8">{cake?.name}</p>
+                                        <motion.p 
+                                            initial={{ scale: 1.5 }}
+                                            animate={{ scale: 1}}
+                                            transition={{ duration: 0.7}}
+                                            className="h3 text-black text-center mb-4 md:mb-8"
+                                        >{cake?.name}</motion.p>
                                         {/* Price and add to cart */}
-                                        <div className='flex flex-col md:flex-row md:justify-evenly mb-4'>
+                                        <motion.div 
+                                            initial={{ x: '-100vw' }}
+                                            animate={{ x: 0 }}
+                                            transition={{ duration: 0.8}}
+                                            className='flex flex-col md:flex-row md:justify-evenly mb-4'
+                                        >
                                             <p className='h4 text-black mb-4 md:mb-0'>${cakePrice}</p>
                                             <button 
-                                                className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 flex items-center'
+                                                className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 flex items-center hover:scale-125 hover:bg-teal-400'
                                                 onClick={() => handleAddToCart(cake)}
                                             >
                                                 Add to cart
                                             </button>
-                                        </div>
+                                        </motion.div>
                                         
-                                        <p className='text-black'>{cake.description}</p>
+                                        <motion.p 
+                                            initial={{ x: '-100vw' }}
+                                            animate={{ x: 0 }}
+                                            transition={{ duration: 0.8}}
+                                            className='text-black'
+                                        >
+                                            {cake.description}
+                                        </motion.p>
                                        
                                         {/* Price buttons */}
-                                        <div className='mt-4'>
+                                        <motion.div 
+                                            initial={{ scale: 1.5 }}
+                                            animate={{ scale: 1}}
+                                            transition={{ duration: 0.7}}
+                                            className='mt-4'
+                                        >
                                             {cake.options.map((cakeOption, index) => {
                                                 return (
                                                     <div className='py-2' key={index}>
@@ -92,14 +120,19 @@ const CakeInformation = () => {
                                                     </div>
                                                 )
                                             })}
-                                        </div>
+                                        </motion.div>
 
-                                        <button className='btn btn-sm text-gray-400 w-full flex items-center'>
+                                        <motion.button 
+                                        initial={{ x: '100vw' }}
+                                        animate={{ x: 0 }}
+                                        transition={{ duration: 0.5}}
+                                        className='btn btn-sm text-gray-400 w-full flex items-center'
+                                        >
                                             <Link className='flex items-center' to={'/cakes'}>
                                                 <svg className="h-8 w-8 text-gray-400 mr-2"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="5" y1="12" x2="19" y2="12" />  <line x1="5" y1="12" x2="9" y2="16" />  <line x1="5" y1="12" x2="9" y2="8" /></svg>
                                                 Continue shopping
                                             </Link>
-                                        </button>
+                                        </motion.button>
                                     </div>
 
                                 </div>
