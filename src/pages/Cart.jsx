@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux"
 import Header from '../partials/Header';
+import { motion } from 'framer-motion'
 import PageIllustration from '../partials/PageIllustration';
 import Footer from '../partials/Footer';
 import { clearCart, decreaseQuantity, getTotals, increaseQuantity, removeFromCart } from '../reducers/shoppingCartSlice';
@@ -47,28 +48,41 @@ function Cart() {
 
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center md:pb-16">
-                <h2 className="h2 mb-8 text-black">Your cart</h2>
+                <motion.h2 
+                  className="h2 mb-8 text-black"
+                  initial={{ scale: 1.5 }}
+                  animate={{ scale: 1}}
+                  transition={{ duration: 0.7}}  
+                >Your cart</motion.h2>
               </div>
 
               {/* Items Selected */}
               <div className='flex justify-center'>
                 {/* Conditional rendering... If the cart is empty, then show: */}
                 {cartSelector.length === 0 && (
-                  <div>
+                  <motion.div
+                    initial={{ x: '-100vw' }}
+                    animate={{ x: 0 }}
+                    transition={{ duration: 0.8}}
+                  >
                     <p className='h4 text-black mb-8'>Your cart is empty</p>
                     <Link to={'/cakes'}>
                     <button 
-                      className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 w-full flex items-center'>
+                      className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 w-full flex items-center hover:scale-125 hover:bg-teal-400'>
                           Go to online shop
                       </button>
                       </Link>
-                  </div>
+                  </motion.div>
                 )}
                 {/* Conditional rendering... If the car has items, then show: */}
                 <div className='flex flex-col'>
                   {cartSelector.length > 0 && (
                     
-                    <div>
+                    <motion.div
+                      initial={{ x: '-100vw' }}
+                      animate={{ x: 0 }}
+                      transition={{ duration: 0.8}}
+                    >
 
                       {/* Desktop view */}
                       {/* Titles grid */}
@@ -186,7 +200,7 @@ function Cart() {
                         <div className='hidden md:grid md:grid-cols-12 md:gap-6 my-2 max-h-30'>
                           <div className='col-span-2'>
                             <button 
-                              className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 w-full flex items-center'
+                              className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 w-full flex items-center hover:scale-125 hover:bg-teal-400'
                               onClick={() => {
                                 handleClearCart()
                               }}  
@@ -205,7 +219,7 @@ function Cart() {
                             </div>
 
                             {/* Checkout and go back buttons desktop */}
-                            <button className='col-span-4 mt-4 btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 w-full flex items-center'>
+                            <button className='col-span-4 mt-4 btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 w-full flex items-center hover:scale-125 hover:bg-teal-400'>
                               Proceed to checkout
                             </button>
                             <button className='col-span-4 btn btn-sm text-gray-400 w-full flex items-center'>
@@ -250,7 +264,7 @@ function Cart() {
                             </button>
                         </div>
 
-                    </div>
+                    </motion.div>
                   )}
                 </div>
               </div>

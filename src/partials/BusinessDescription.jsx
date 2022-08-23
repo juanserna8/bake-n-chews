@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'
 
 import Celebration from '/images/celebration.webp';
 import Slice from '/images/slice.webp'
@@ -14,7 +15,12 @@ function BusinessDescription() {
  
   return (
     <section>
-      <div className="mx-auto px-4 sm:px-6">
+      <motion.div 
+        initial={{ x: '-100vw' }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.8}}
+        className="mx-auto px-4 sm:px-6"
+      >
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center mb-12 text-black">
@@ -24,14 +30,14 @@ function BusinessDescription() {
 
           {/* Buttons section */}
           <div className='grid gap-4 sm:flex sm:justify-evenly sm:px-10'>
-            <Link to="/cakes" className="btn-sm bg-yellowHeader-100 border border-yellowBorder-100 sm:w-[15rem]">
+            <Link to="/cakes" className="btn-sm bg-yellowHeader-100 border border-yellowBorder-100 sm:w-[15rem] hover:scale-125 hover:bg-teal-400">
               <button 
                   className='text-black'  
               >
                   ONLINE SHOP
               </button>
             </Link>
-            <Link to="/contact" className="btn-sm bg-yellowHeader-100 border border-yellowBorder-100 sm:w-[15rem]">
+            <Link to="/contact" className="btn-sm bg-yellowHeader-100 border border-yellowBorder-100 sm:w-[15rem] hover:scale-125 hover:bg-teal-400">
             <button 
                 className=' text-black'  
             >
@@ -68,7 +74,7 @@ function BusinessDescription() {
             />
           </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 }

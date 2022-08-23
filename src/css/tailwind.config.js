@@ -136,12 +136,17 @@ module.exports = {
       },
       animation: {
         float: 'float 5s ease-in-out infinite',
+        beat: 'beat 4.5s ease-out infinite'
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10%)' },
         },
+        beat: {
+          '0%, 100%': {transform: 'scale(1)'},
+          '25%': {transform: 'scale(1.1)'}
+        }
       },
       zIndex: {
         '-1': '-1',

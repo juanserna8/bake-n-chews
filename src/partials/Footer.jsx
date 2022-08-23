@@ -31,7 +31,7 @@ function Footer() {
                     <img 
                         src={logo} 
                         alt="El Mohan Logo" 
-                        className='object-contain h-16 rounded-full '  
+                        className='object-contain h-16 rounded-full transition hover:scale-125 duration-500'  
                     />
                     </Link>
                 </div>

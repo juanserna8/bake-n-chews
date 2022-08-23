@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import Header from '../partials/Header';
 import EverAbout from '../partials/EverAbout';
@@ -8,7 +9,12 @@ import Footer from '../partials/Footer';
 
 function About() {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus">
+    <motion.div 
+      initial={{ opacity:0 }}
+      animate={{ opacity:1 }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus"
+    >
 
       {/*  Site header */}
       <Header />
@@ -25,7 +31,7 @@ function About() {
       {/*  Site footer */}
       <Footer />
 
-    </div>
+    </motion.div>
   );
 }
 
