@@ -85,7 +85,7 @@ const CakeInformation = () => {
                                         >
                                             <p className='h4 text-black mb-4 md:mb-0'>${cakePrice}</p>
                                             <button 
-                                                className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 flex items-center hover:scale-125 hover:bg-teal-400'
+                                                className='btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 flex items-center'
                                                 onClick={() => handleAddToCart(cake)}
                                             >
                                                 Add to cart

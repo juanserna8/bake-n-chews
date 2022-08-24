@@ -247,9 +247,11 @@ function Cart() {
                         {/* Bottom buttons */}
                         {/* Mobile */}
                         <div className='mt-2 grid grid-cols-1 gap-2'>
-                            <button className='md:hidden btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 w-full flex items-center'>
+                          <Link to={'/checkout'} className='md:hidden text-black font-marcellus w-full flex items-center transition duration-150 ease-in-out hover:scale-110'>
+                            <button className='btn btn-sm bg-yellowHeader-100 border border-yellowBorder-100 w-full'>
                               Proceed to checkout
                             </button>
+                          </Link>
                             <button 
                               className='md:hidden btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 w-full flex items-center'
                               onClick={() => {
