@@ -219,9 +219,11 @@ function Cart() {
                             </div>
 
                             {/* Checkout and go back buttons desktop */}
-                            <button className='col-span-4 mt-4 btn btn-sm text-black bg-yellowHeader-100 border border-yellowBorder-100 w-full flex items-center hover:scale-125 hover:bg-teal-400'>
-                              Proceed to checkout
-                            </button>
+                            <Link to={'/checkout'} className='col-span-4 mt-4 text-black font-marcellus px-2 flex items-center transition duration-150 ease-in-out hover:scale-110'>
+                              <button className='btn btn-sm bg-yellowHeader-100 border border-yellowBorder-100 w-full hover:scale-125 hover:bg-teal-400'>
+                                Proceed to checkout
+                              </button>
+                            </Link>
                             <button className='col-span-4 btn btn-sm text-gray-400 w-full flex items-center'>
                               <Link className='flex items-center' to={'/cakes'}>
                                 <svg className="h-8 w-8 text-gray-400 mr-2"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="5" y1="12" x2="19" y2="12" />  <line x1="5" y1="12" x2="9" y2="16" />  <line x1="5" y1="12" x2="9" y2="8" /></svg>
