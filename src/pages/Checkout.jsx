@@ -1,10 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Footer from '../partials/Footer';
 
-function Checkout() {
+
+function Checkout(token) {
+  
+  const [product] = useState({
+    name: 'Uchubas',
+    price: 500,
+    description: 'Fresh fruit'
+  })
+  
+  async function handleToken(token, addresses) {
+    //console.log({ token, addresses })
+    const response = await axios.post('http://localhost:5000/checkout', {
+      token,
+      product
+    })
+
+    console.log(response.status)
+
+    if(response.status === 200) {
+      toast("Success Payment is completed", {
+        type: 'success'
+      })
+    } else {
+      toast("Failure Payment is not completed", {
+        type: 'error'
+      })
+    }
+  }
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -29,82 +60,19 @@ function Checkout() {
                 {/* {<p className="text-xl text-gray-600 dark:text-gray-400">We'll send you a text with a link to download the app.</p>} */}
               </div>
 
-              {/* Contact form */}
-              <form className="max-w-xl mx-auto">
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full md:w-1/2 px-3 mb-4 md:mb-0">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="first-name">First Name <span className="text-red-600">*</span></label>
-                    <input id="first-name" type="text" className="form-input w-full" placeholder="Enter your first name" required />
-                  </div>
-                  <div className="w-full md:w-1/2 px-3">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="last-name">Last Name <span className="text-red-600">*</span></label>
-                    <input id="last-name" type="text" className="form-input w-full" placeholder="Enter your last name" required />
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="company">Company <span className="text-red-600">*</span></label>
-                    <input id="company" type="text" className="form-input w-full" placeholder="Enter your company name" required />
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="phone">Phone Number <span className="text-red-600">*</span></label>
-                    <input id="phone" type="tel" className="form-input w-full" placeholder="Enter your phone number" required />
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="country">Country <span className="text-red-600">*</span></label>
-                    <select id="country" className="form-select w-full" required>
-                      <option>United States</option>
-                      <option>United Kingdom</option>
-                      <option>Germany</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <div className="flex justify-between items-center mb-1">
-                      <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium" htmlFor="message">Details</label>
-                      <span className="text-sm text-gray-500">Optional</span>
-                    </div>
-                    <textarea id="message" rows="4" className="form-textarea w-full" placeholder="What do you want to build with Appy?"></textarea>
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <div className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-3">Tell us about your role</div>
-                    <label className="flex items-center mb-2">
-                      <input type="radio" className="form-radio" name="role" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-3">CO-founder</span>
-                    </label>
-                    <label className="flex items-center mb-2">
-                      <input type="radio" className="form-radio" name="role" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-3">Developer</span>
-                    </label>
-                    <label className="flex items-center mb-2">
-                      <input type="radio" className="form-radio" name="role" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-3">Design / Marketing</span>
-                    </label>
-                    <label className="flex items-center mb-2">
-                      <input type="radio" className="form-radio" name="role" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-3">Other</span>
-                    </label>
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mt-6">
-                  <div className="w-full px-3">
-                    <button className="btn text-white bg-teal-500 hover:bg-teal-400 w-full flex items-center">
+              <button 
+                      className="btn text-white bg-teal-500 hover:bg-teal-400 w-full flex items-center">
                       <span>Request code</span>
                       <svg className="w-3 h-3 shrink-0 mt-px ml-2" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                         <path className="fill-current" d="M6.602 11l-.875-.864L9.33 6.534H0v-1.25h9.33L5.727 1.693l.875-.875 5.091 5.091z" />
                       </svg>
-                    </button>
-                  </div>
-                </div>
-              </form>
-
+              </button>
+              <StripeCheckout 
+                stripeKey='pk_test_51La6UQAH1T8Fy7RT72W0uXcsFpg8yOyl4uVAekuHgMvnlH3FoohJ9AIZyOOknDXIQG6xWgw4ReVYlbloEa1gOMuD00tqTTVjMy'
+                token={handleToken}
+                amount={product.price * 100}
+                name={product.name}
+              />
             </div>
           </div>
         </section>
