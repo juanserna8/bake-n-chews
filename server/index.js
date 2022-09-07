@@ -23,7 +23,7 @@ app.post('/checkout', async (req, res) => {
     let error, status
     
     try{
-      const {product, token} = req.body
+      const {stripeProducts, token} = req.body
 
       const customer = await stripe.customers.create({
         email: token.email,
@@ -33,11 +33,11 @@ app.post('/checkout', async (req, res) => {
       const key = uuid()
 
       const charge = await stripe.charges.create({
-        amount: product.price * 100,
-        currency: "usd",
+        amount: Math.round((stripeProducts.price + Number.EPSILON) * 100),
+        currency: "aud",
         customer: customer.id,
         receipt_email: token.email,
-        description: `Purchased the ${product.name}`,
+        description: `Purchased the ${stripeProducts.name}`,
         shipping: {
             name: token.card.name,
             address: {
