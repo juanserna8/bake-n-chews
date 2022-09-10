@@ -37,7 +37,7 @@ app.post('/checkout', async (req, res) => {
         currency: "aud",
         customer: customer.id,
         receipt_email: token.email,
-        description: `Purchased the ${stripeProducts.name}`,
+        description: `Purchased the ${stripeProducts.description}`,
         shipping: {
             name: token.card.name,
             address: {
@@ -54,7 +54,7 @@ app.post('/checkout', async (req, res) => {
         // }
         );
 
-    console.log("Charge:", { charge })
+    console.log("Charge:", { charge }, "Name", stripeProducts.description)
     status = "success"
 
     } catch (error) {

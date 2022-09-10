@@ -53,6 +53,9 @@ export const shoppingCartSlice = createSlice({
                         position: "bottom-left"
                     })
             }
+            // Update cartTotalQuantity and Amount
+            state.cartTotalQuantity ++
+            state.cartTotalAmount += action.payload.option.price
             localStorage.setItem("cartItems", JSON.stringify(state.cart))
         },
         

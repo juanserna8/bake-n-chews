@@ -34,10 +34,10 @@ function Checkout(token) {
   const productNamesString = productNames.toString();
 
   const productDescriptions = products.map((product) => {
-    return product.description
+    return product.name + ' - ' + product.description
   })
 
-  const productDescriptionsString = productNames.toString();
+  const productDescriptionsString = productDescriptions.join(', ');
 
   const stripeProducts = {
     name: productNamesString,
@@ -52,10 +52,30 @@ function Checkout(token) {
     description: 'Fresh fruit'
   })
 
+  const example = [
+    {name: 'papa', size: 'big', price: 40},
+    {name: 'burguer', size: 'big', price: 50}
+  ]
+
+  const result = example.map((x) => {
+    return (
+    ({ description: x.name + ' ' + x.size})
+    )
+  })
+
+  let singleObject = result.reduce(function(accum, cur) {
+    return accum + cur.description + ' '
+  }, {})
+
+  // useEffect(() => {
+  //   console.log( 'REDUCER', singleObject, result)
+  // }, [])
+
   useEffect(() => {
-    console.log('products', products, 'STRIPE', stripeProducts, 'Des', productDescriptions)
+    console.log(productDescriptionsString)
   }, [])
   
+  // 'products', products, 'STRIPE', stripeProducts, 'Des', productDescriptions,
   
   async function handleToken(token, addresses) {
     //console.log({ token, addresses })
@@ -87,8 +107,9 @@ function Checkout(token) {
       <main className="grow">
 
         <section className='relative pb-20'>
-          <div className="w-4/5 mx-auto px-4 sm:px-6 relative border-b-2 border-yellowBorder-100">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-0">
+          <div className="max-w-6xl md:w-4/5 mx-auto px-6 md:px-6 relative ">
+            {/* max-w-6xl mx-auto px-4 sm:px-6 pt-10 */}
+            <div className="pt-32 md:pt-40 md:pb-0 border-b-2 border-yellowBorder-100">
               <div className="max-w-3xl mx-auto text-center md:pb-16">
                 <motion.h2 
                   className="h2 mb-8 text-black"
@@ -99,6 +120,11 @@ function Checkout(token) {
               </div>
 
               {/* Desktop Titles */}
+              <motion.div
+                initial={{ x: '-100vw' }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.8}}
+              >
               <div className='grid grid-cols-2'>
                 <p className="col-span-1 h4 text-black text-center">Product</p>
                 <p className="col-span-1 h4 text-black text-center">Subtotal</p>
@@ -108,18 +134,21 @@ function Checkout(token) {
                 {cartSelector.map((cartItem, index) => {
                   return <li key={index}>
                     {/* Desktop products */}
-                    <div className='hidden md:grid md:grid-cols-2 my-2 max-h-30'>
-                      <div className="col-span-1 md:col-span-1 grid justify-items-center items-center pl-2">
-                          <p className="text-black text-2xl text-center self-end">{cartItem.name} {cartItem.size} ({cartItem.people})</p>
+                    <div className='grid grid-cols-2 my-2 max-h-30'>
+                      <div className="col-span-1 grid justify-items-center items-center pl-2">
+                          <p className="hidden md:flex text-black text-2xl text-center self-end">{cartItem.name} {cartItem.size} ({cartItem.people})</p>
+                          <p className="md:hidden text-black text-2xl text-center self-end">{cartItem.name}</p>
+                          <p className="md:hidden text-gray-500 text-md text-center">{cartItem.size} ({cartItem.people})</p>
                       </div>
-                      <div className="col-span-1 md:col-span-1 grid justify-items-center items-center pl-2">
-                          <p className="text-black text-2xl text-center self-end">${cartItem.price * cartItem.cartQuantity}</p>
+                      <div className="col-span-1 grid justify-items-center items-center pl-2">
+                          <p className="text-black text-2xl text-center">${cartItem.price * cartItem.cartQuantity}</p>
                       </div>
                     </div>
                   </li>
                 })}
               </ul>
 
+              </motion.div>
             </div>
           </div>
 
@@ -128,14 +157,14 @@ function Checkout(token) {
             <p className="text-black text-2xl text-center self-end">${cartState.cartTotalAmount}</p>
           </div>
 
-          <div className='mx-auto w-4/5 py-2 grid grid-cols-2'>
+          <div className='mx-auto w-4/5 py-2 grid grid-cols-2 items-center'>
             <p className="col-span-1 h4 text-black text-center">Transaction fee</p>
-            <p className="text-black text-2xl text-center self-end">${transF.toFixed(2)}</p>
+            <p className="text-black text-2xl text-center">${transF.toFixed(2)}</p>
           </div>
 
-          <div className='mx-auto w-4/5 grid grid-cols-2'>
+          <div className='mx-auto w-4/5 grid grid-cols-2 items-center'>
             <p className="col-span-1 h4 text-black text-center">Total (including GST)</p>
-            <p className="text-black text-2xl text-center self-end">${total}</p>
+            <p className="text-black text-2xl text-center">${total.toFixed(2)}</p>
           </div>
 
           {/* Stripe btn */}
