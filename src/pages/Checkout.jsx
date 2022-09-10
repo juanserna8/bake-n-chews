@@ -152,6 +152,12 @@ function Checkout(token) {
             </div>
           </div>
 
+          <motion.div
+            initial={{ x: '-100vw' }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.8}}
+          >
+
           <div className='mx-auto w-4/5 py-2 grid grid-cols-2 border-b border-yellowBorder-100'>
             <p className="col-span-1 h4 text-black text-center">Subtotal</p>
             <p className="text-black text-2xl text-center self-end">${cartState.cartTotalAmount}</p>
@@ -167,6 +173,8 @@ function Checkout(token) {
             <p className="text-black text-2xl text-center">${total.toFixed(2)}</p>
           </div>
 
+          
+
           {/* Stripe btn */}
           <div className='mt-12 text-center'>
             <StripeCheckout 
@@ -176,6 +184,8 @@ function Checkout(token) {
               name={stripeProducts.name}
             />
           </div>
+
+          </motion.div>
         </section>
 
       </main>
