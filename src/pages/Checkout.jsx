@@ -23,7 +23,8 @@ function Checkout(token) {
     return {
       name: cartItem.name,
       price: cartItem.price,
-      description: cartItem.size
+      description: cartItem.size,
+      quantity: cartItem.cartQuantity
     }
   })
 
@@ -34,7 +35,7 @@ function Checkout(token) {
   const productNamesString = productNames.toString();
 
   const productDescriptions = products.map((product) => {
-    return product.name + ' - ' + product.description
+    return product.name + ' - ' + product.description + ` (x ${product.quantity.toString()})`
   })
 
   const productDescriptionsString = productDescriptions.join(', ');
@@ -45,37 +46,10 @@ function Checkout(token) {
     description: productDescriptionsString
   }
 
-  
-  const [product] = useState({
-    name: 'Uchubas',
-    price: 500,
-    description: 'Fresh fruit'
-  })
-
-  const example = [
-    {name: 'papa', size: 'big', price: 40},
-    {name: 'burguer', size: 'big', price: 50}
-  ]
-
-  const result = example.map((x) => {
-    return (
-    ({ description: x.name + ' ' + x.size})
-    )
-  })
-
-  let singleObject = result.reduce(function(accum, cur) {
-    return accum + cur.description + ' '
-  }, {})
-
-  // useEffect(() => {
-  //   console.log( 'REDUCER', singleObject, result)
-  // }, [])
 
   useEffect(() => {
     console.log(productDescriptionsString)
   }, [])
-  
-  // 'products', products, 'STRIPE', stripeProducts, 'Des', productDescriptions,
   
   async function handleToken(token, addresses) {
     //console.log({ token, addresses })
@@ -136,8 +110,8 @@ function Checkout(token) {
                     {/* Desktop products */}
                     <div className='grid grid-cols-2 my-2 max-h-30'>
                       <div className="col-span-1 grid justify-items-center items-center pl-2">
-                          <p className="hidden md:flex text-black text-2xl text-center self-end">{cartItem.name} {cartItem.size} ({cartItem.people})</p>
-                          <p className="md:hidden text-black text-2xl text-center self-end">{cartItem.name}</p>
+                          <p className="hidden md:flex text-black text-2xl text-center self-end">{cartItem.cartQuantity} x {cartItem.name} {cartItem.size} ({cartItem.people})</p>
+                          <p className="md:hidden text-black text-2xl text-center self-end">{cartItem.cartQuantity} x {cartItem.name}</p>
                           <p className="md:hidden text-gray-500 text-md text-center">{cartItem.size} ({cartItem.people})</p>
                       </div>
                       <div className="col-span-1 grid justify-items-center items-center pl-2">
