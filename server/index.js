@@ -65,6 +65,21 @@ app.post('/checkout', async (req, res) => {
     res.json({ error, status });
 })
 
+
+// FORM
+// Api middlewares
+app.use(express.json()) //This is to accept data in json format
+app.use(express.urlencoded()) //This is to decode the data sent through html form
+
+// Api routes
+app.get('/form', (req, res) => {
+    res.sendFile(__dirname + '../src/partials/Cta.jsx')
+})
+app.post('/formPost', (req, res) => {
+    console.log(req.body)
+})
+
+
 app.listen(PORT, () => {
     console.log('App is listening on Port 5000')
 })

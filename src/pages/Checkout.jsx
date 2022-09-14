@@ -46,11 +46,6 @@ function Checkout(token) {
     description: productDescriptionsString
   }
 
-
-  useEffect(() => {
-    console.log(productDescriptionsString)
-  }, [])
-  
   async function handleToken(token, addresses) {
     //console.log({ token, addresses })
     const response = await axios.post('http://localhost:5000/checkout', {
@@ -70,6 +65,8 @@ function Checkout(token) {
       })
     }
   }
+
+  const stripeStyle = {display: 'none'}
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus">
@@ -156,7 +153,12 @@ function Checkout(token) {
               token={handleToken}
               amount={stripeProducts.price * 100}
               name={stripeProducts.name}
-            />
+              style={stripeStyle}
+            >
+              <button className='btn btn-sm bg-yellowHeader-100 border border-yellowBorder-100 text-black font-marcellus md:hover:scale-125 md:hover:bg-teal-400'>
+                Pay with card
+              </button>
+            </StripeCheckout>
           </div>
 
           </motion.div>
