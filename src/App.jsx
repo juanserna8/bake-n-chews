@@ -19,6 +19,7 @@ import CakeInformation from './partials/CakeInformation'
 
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout'
 import PageNotFound from './pages/PageNotFound';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path="/cakes" element={<Cakes />} />
           <Route path="/cakes/:cakeId" element={<CakeInformation />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout /> } />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
     </>
