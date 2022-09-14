@@ -1,12 +1,75 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Footer from '../partials/Footer';
 
-function Checkout() {
+
+function Checkout(token) {
+  
+  const cartSelector = useSelector((state) => state.shoppingCart.cart)
+  const cartState = useSelector((state) => state.shoppingCart)
+
+  // transaction fee
+  const transF = (cartState.cartTotalAmount * 0.0175) + 0.3
+  const total = cartState.cartTotalAmount + transF
+
+  const products = cartSelector.map((cartItem, index) => {
+    return {
+      name: cartItem.name,
+      price: cartItem.price,
+      description: cartItem.size,
+      quantity: cartItem.cartQuantity
+    }
+  })
+
+  const productNames = products.map((product) => {
+    return product.name
+  })
+
+  const productNamesString = productNames.toString();
+
+  const productDescriptions = products.map((product) => {
+    return product.name + ' - ' + product.description + ` (x ${product.quantity.toString()})`
+  })
+
+  const productDescriptionsString = productDescriptions.join(', ');
+
+  const stripeProducts = {
+    name: productNamesString,
+    price: total,
+    description: productDescriptionsString
+  }
+
+  async function handleToken(token, addresses) {
+    //console.log({ token, addresses })
+    const response = await axios.post('http://localhost:5000/checkout', {
+      token,
+      stripeProducts
+    })
+
+    console.log(response.status)
+
+    if(response.status === 200) {
+      toast("Success Payment is completed", {
+        type: 'success'
+      })
+    } else {
+      toast("Failure Payment is not completed", {
+        type: 'error'
+      })
+    }
+  }
+
+  const stripeStyle = {display: 'none'}
+
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className="flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus">
 
       {/*  Site header */}
       <Header />
@@ -14,99 +77,91 @@ function Checkout() {
       {/*  Page content */}
       <main className="grow">
 
-        {/*  Page illustration */}
-        <div className="relative max-w-6xl mx-auto h-0 pointer-events-none -z-1" aria-hidden="true">
-          <PageIllustration />
-        </div>
-
-        <section className="relative">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-
-              {/* Page header */}
-              <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-                <h1 className="h1 font-red-hat-display mb-4">Your cart</h1>
-                {/* {<p className="text-xl text-gray-600 dark:text-gray-400">We'll send you a text with a link to download the app.</p>} */}
+        <section className='relative pb-20'>
+          <div className="max-w-6xl md:w-4/5 mx-auto px-6 md:px-6 relative ">
+            {/* max-w-6xl mx-auto px-4 sm:px-6 pt-10 */}
+            <div className="pt-32 md:pt-40 md:pb-0 border-b-2 border-yellowBorder-100">
+              <div className="max-w-3xl mx-auto text-center md:pb-16">
+                <motion.h2 
+                  className="h2 mb-8 text-black"
+                  initial={{ scale: 1.5 }}
+                  animate={{ scale: 1}}
+                  transition={{ duration: 0.7}}  
+                >Checkout Summary</motion.h2>
               </div>
 
-              {/* Contact form */}
-              <form className="max-w-xl mx-auto">
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full md:w-1/2 px-3 mb-4 md:mb-0">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="first-name">First Name <span className="text-red-600">*</span></label>
-                    <input id="first-name" type="text" className="form-input w-full" placeholder="Enter your first name" required />
-                  </div>
-                  <div className="w-full md:w-1/2 px-3">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="last-name">Last Name <span className="text-red-600">*</span></label>
-                    <input id="last-name" type="text" className="form-input w-full" placeholder="Enter your last name" required />
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="company">Company <span className="text-red-600">*</span></label>
-                    <input id="company" type="text" className="form-input w-full" placeholder="Enter your company name" required />
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="phone">Phone Number <span className="text-red-600">*</span></label>
-                    <input id="phone" type="tel" className="form-input w-full" placeholder="Enter your phone number" required />
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-1" htmlFor="country">Country <span className="text-red-600">*</span></label>
-                    <select id="country" className="form-select w-full" required>
-                      <option>United States</option>
-                      <option>United Kingdom</option>
-                      <option>Germany</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <div className="flex justify-between items-center mb-1">
-                      <label className="block text-gray-800 dark:text-gray-300 text-sm font-medium" htmlFor="message">Details</label>
-                      <span className="text-sm text-gray-500">Optional</span>
-                    </div>
-                    <textarea id="message" rows="4" className="form-textarea w-full" placeholder="What do you want to build with Appy?"></textarea>
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-5">
-                  <div className="w-full px-3">
-                    <div className="block text-gray-800 dark:text-gray-300 text-sm font-medium mb-3">Tell us about your role</div>
-                    <label className="flex items-center mb-2">
-                      <input type="radio" className="form-radio" name="role" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-3">CO-founder</span>
-                    </label>
-                    <label className="flex items-center mb-2">
-                      <input type="radio" className="form-radio" name="role" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-3">Developer</span>
-                    </label>
-                    <label className="flex items-center mb-2">
-                      <input type="radio" className="form-radio" name="role" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-3">Design / Marketing</span>
-                    </label>
-                    <label className="flex items-center mb-2">
-                      <input type="radio" className="form-radio" name="role" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400 ml-3">Other</span>
-                    </label>
-                  </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mt-6">
-                  <div className="w-full px-3">
-                    <button className="btn text-white bg-teal-500 hover:bg-teal-400 w-full flex items-center">
-                      <span>Request code</span>
-                      <svg className="w-3 h-3 shrink-0 mt-px ml-2" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                        <path className="fill-current" d="M6.602 11l-.875-.864L9.33 6.534H0v-1.25h9.33L5.727 1.693l.875-.875 5.091 5.091z" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </form>
+              {/* Desktop Titles */}
+              <motion.div
+                initial={{ x: '-100vw' }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.8}}
+              >
+              <div className='grid grid-cols-2'>
+                <p className="col-span-1 h4 text-black text-center">Product</p>
+                <p className="col-span-1 h4 text-black text-center">Subtotal</p>
+              </div>
 
+              <ul className='grid grid-cols-1 my-8'>
+                {cartSelector.map((cartItem, index) => {
+                  return <li key={index}>
+                    {/* Desktop products */}
+                    <div className='grid grid-cols-2 my-2 max-h-30'>
+                      <div className="col-span-1 grid justify-items-center items-center pl-2">
+                          <p className="hidden md:flex text-black text-2xl text-center self-end">{cartItem.cartQuantity} x {cartItem.name} {cartItem.size} ({cartItem.people})</p>
+                          <p className="md:hidden text-black text-2xl text-center self-end">{cartItem.cartQuantity} x {cartItem.name}</p>
+                          <p className="md:hidden text-gray-500 text-md text-center">{cartItem.size} ({cartItem.people})</p>
+                      </div>
+                      <div className="col-span-1 grid justify-items-center items-center pl-2">
+                          <p className="text-black text-2xl text-center">${cartItem.price * cartItem.cartQuantity}</p>
+                      </div>
+                    </div>
+                  </li>
+                })}
+              </ul>
+
+              </motion.div>
             </div>
           </div>
+
+          <motion.div
+            initial={{ x: '-100vw' }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.8}}
+          >
+
+          <div className='mx-auto w-4/5 py-2 grid grid-cols-2 border-b border-yellowBorder-100'>
+            <p className="col-span-1 h4 text-black text-center">Subtotal</p>
+            <p className="text-black text-2xl text-center self-end">${cartState.cartTotalAmount}</p>
+          </div>
+
+          <div className='mx-auto w-4/5 py-2 grid grid-cols-2 items-center'>
+            <p className="col-span-1 h4 text-black text-center">Transaction fee</p>
+            <p className="text-black text-2xl text-center">${transF.toFixed(2)}</p>
+          </div>
+
+          <div className='mx-auto w-4/5 grid grid-cols-2 items-center'>
+            <p className="col-span-1 h4 text-black text-center">Total (including GST)</p>
+            <p className="text-black text-2xl text-center">${total.toFixed(2)}</p>
+          </div>
+
+          
+
+          {/* Stripe btn */}
+          <div className='mt-12 text-center'>
+            <StripeCheckout 
+              stripeKey='pk_test_51La6UQAH1T8Fy7RT72W0uXcsFpg8yOyl4uVAekuHgMvnlH3FoohJ9AIZyOOknDXIQG6xWgw4ReVYlbloEa1gOMuD00tqTTVjMy'
+              token={handleToken}
+              amount={stripeProducts.price * 100}
+              name={stripeProducts.name}
+              style={stripeStyle}
+            >
+              <button className='btn btn-sm bg-yellowHeader-100 border border-yellowBorder-100 text-black font-marcellus md:hover:scale-125 md:hover:bg-teal-400'>
+                Pay with card
+              </button>
+            </StripeCheckout>
+          </div>
+
+          </motion.div>
         </section>
 
       </main>

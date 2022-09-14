@@ -7,6 +7,7 @@ import {
 
 import { ToastContainer } from 'react-toastify';
 import { AnimatePresence } from 'framer-motion';
+import "@stripe/stripe-js";
 
 import './css/style.scss';
 import 'react-toastify/dist/ReactToastify.css'
