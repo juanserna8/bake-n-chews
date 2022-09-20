@@ -4,6 +4,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
+import { API } from 'aws-amplify';
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';

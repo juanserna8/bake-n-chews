@@ -1,0 +1,27 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-theevercake-dev-215444-authRole",
+      "UnauthRoleArn": "arn:aws:iam::476031719927:role/amplify-theevercake-dev-215444-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::476031719927:role/amplify-theevercake-dev-215444-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-theevercake-dev-215444-deployment",
+      "UnauthRoleName": "amplify-theevercake-dev-215444-unauthRole",
+      "StackName": "amplify-theevercake-dev-215444",
+      "StackId": "arn:aws:cloudformation:us-east-1:476031719927:stack/amplify-theevercake-dev-215444/b3860070-3748-11ed-be15-12db7f23c30b",
+      "AmplifyAppId": "db61t1u90mry8",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-theevercake-dev-215444-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "undefined": {}
+      },
+      "function": {
+        "createContact": {
+          "deploymentBucketName": "amplify-theevercake-dev-215444-deployment",
+          "s3Key": "amplify-builds/createContact-58783871572f5573716b-build.zip"
+        }
+      }
+    }
+  }
+}

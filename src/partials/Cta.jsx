@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
-// import { json } from 'express';
 import { toast } from 'react-toastify';
+import { API } from 'aws-amplify';
 
 function Cta() {
 
@@ -20,9 +20,8 @@ function Cta() {
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let res = await axios.post('http://localhost:5000/formPost', {
-        method: "POST",
-        body: JSON.stringify({
+      let res = await API.post('contacts','/create', {
+        body: {
           firstName: firstName,
           lastName: lastName,
           phone: phone,
@@ -31,9 +30,8 @@ function Cta() {
           portions: portions,
           flavour: flavour,
           message: message
-        }),
+        },
       });
-      let resJson = await res.json();
       if (res.status === 200) {
         setFirstName('');
         setLastName('');

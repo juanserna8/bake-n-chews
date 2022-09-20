@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aws-amplify/cli": "^10.0.0",
+    "@aws-amplify/ui-react": "^3.5.2",
     "@reduxjs/toolkit": "^1.8.3",
     "@stripe/stripe-js": "^1.35.0",
     "@tailwindcss/forms": "^0.4.0",
     "aos": "^3.0.0-beta.6",
+    "aws-amplify": "^4.3.35",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
