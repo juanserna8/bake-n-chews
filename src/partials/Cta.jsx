@@ -1,6 +1,61 @@
 import React from 'react';
+import axios from 'axios';
+import { useState } from 'react';
+// import { json } from 'express';
+import { toast } from 'react-toastify';
 
 function Cta() {
+
+  const url = '';
+
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [phone, setPhone] = useState("")
+  const [email, setEmail] = useState("")
+  const [date, setDate] = useState("")
+  const [portions, setPortions] = useState("")
+  const [flavour, setFlavour] = useState("")
+  const [message, setMessage] = useState("")
+
+  let handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      let res = await axios.post('http://localhost:5000/formPost', {
+        method: "POST",
+        body: JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          phone: phone,
+          email: email,
+          date: date,
+          portions: portions,
+          flavour: flavour,
+          message: message
+        }),
+      });
+      let resJson = await res.json();
+      if (res.status === 200) {
+        setFirstName('');
+        setLastName('');
+        setPhone('');
+        setEmail('');
+        setDate('');
+        setPortions('');
+        setFlavour('');
+        setMessage('');
+        toast("Success Payment is completed", {
+          type: 'success'
+        })
+      } else {
+        toast("Failure Payment is not completed", {
+          type: 'error'
+        })
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -37,51 +92,51 @@ function Cta() {
 
             {/* CTA form */}
               
-            <form className="max-w-xl mx-auto">
+            <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
                 <div className="flex flex-wrap -mx-3 mb-5">
                   <div className="w-full md:w-1/2 px-3 mb-4 md:mb-0">
                     <label className="block text-black text-sm mb-1" htmlFor="first-name">First Name <span className="text-red-600">*</span></label>
-                    <input id="first-name" type="text" className="form-input w-full bg-white" placeholder="Enter your first name" required />
+                    <input onChange={(e) => setFirstName(e.target.value)} value={firstName} id="first-name" type="text" className="form-input w-full text-white" placeholder="First name" required />
                   </div>
                   <div className="w-full md:w-1/2 px-3">
                     <label className="block text-black text-sm mb-1" htmlFor="last-name">Last Name <span className="text-red-600">*</span></label>
-                    <input id="last-name" type="text" className="form-input w-full" placeholder="Enter your last name" required />
+                    <input onChange={(e) => setLastName(e.target.value)} value={lastName} id="last-name" type="text" className="form-input w-full text-white" placeholder="Last name" required />
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-5">
                   <div className="w-full px-3">
                     <label className="block text-black text-sm mb-1" htmlFor="phone">Phone Number <span className="text-red-600">*</span></label>
-                    <input id="phone" type="tel" className="form-input w-full" placeholder="Enter your phone number" required />
+                    <input onChange={(e) => setPhone(e.target.value)} value={phone} id="phone" type="tel" className="form-input w-full text-white" placeholder="Phone number" required />
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-5">
                   <div className="w-full px-3">
                     <label className="block text-black text-sm mb-1" htmlFor="email">Email <span className="text-red-600">*</span></label>
-                    <input id="email" type="email" className="form-input w-full" placeholder="Enter your email address" required />
+                    <input onChange={(e) => setEmail(e.target.value)} value={email} id="email" type="email" className="form-input w-full text-white" placeholder="Email address" required />
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-5">
                   <div className="w-full px-3">
                     <label className="block text-black text-sm mb-1" htmlFor="date">Date <span className="text-red-600">*</span></label>
-                    <input id="date" type="date" className="form-input w-full text-gray-400" placeholder="Enter delivery date" required />
+                    <input onChange={(e) => setDate(e.target.value)} value={date} id="date" type="date" className="form-input w-full text-white" placeholder="Enter delivery date" required />
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-5">
                   <div className="w-full px-3">
                     <label className="block text-black text-sm mb-1" htmlFor="portions">Number of portions <span className="text-red-600">*</span></label>
-                    <input id="portions" type="number" className="form-input w-full text-gray-400" placeholder="Specify number of portions" required />
+                    <input onChange={(e) => setPortions(e.target.value)} value={portions} id="portions" type="number" className="form-input w-full text-white" placeholder="Number of portions (min 15)" required />
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-5">
                   <div className="w-full px-3">
                     <label className="block text-black text-sm mb-1" htmlFor="flavour">Flavour <span className="text-red-600">*</span></label>
-                    <input id="flavour" type="text" className="form-input w-full" placeholder="Flavour of the cake" required />
+                    <input onChange={(e) => setFlavour(e.target.value)} value={flavour} id="flavour" type="text" className="form-input w-full text-white" placeholder="Flavour of the cake" required />
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-5">
                   <div className="w-full px-3">
                       <label className="block text-black text-sm" htmlFor="message">Details <span className="text-red-600">*</span></label>
-                    <textarea id="message" rows="4" className="form-textarea w-full" placeholder="How would you wish your next cake be like?
+                    <textarea onChange={(e) => setMessage(e.target.value)} value={message} id="message" rows="4" className="form-textarea w-full text-white" placeholder="How would you wish your next cake be like?
                     Please specify the event theme, fruits and ingredients wished, and additional details."></textarea>
                   </div>
                 </div>

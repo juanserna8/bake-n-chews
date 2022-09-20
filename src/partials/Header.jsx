@@ -7,7 +7,9 @@ import { useSelector } from "react-redux";
 
 function Header() {
 
-  const {cartTotalQuantity} = useSelector(state => state.shoppingCart)
+  // const {cartTotalQuantity} = useSelector(state => state.shoppingCart)
+  const shoppingCart = useSelector(state => state.shoppingCart)
+  const {cartTotalQuantity} = shoppingCart;
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const trigger = useRef(null);
