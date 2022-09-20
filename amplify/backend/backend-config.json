@@ -5,6 +5,12 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": []
+    },
+    "processPayment": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
     }
   },
   "api": {
@@ -15,6 +21,20 @@
         {
           "category": "function",
           "resourceName": "createContact",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "payments": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "processPayment",
           "attributes": [
             "Name",
             "Arn"

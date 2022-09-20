@@ -19,7 +19,11 @@
       "function": {
         "createContact": {
           "deploymentBucketName": "amplify-theevercake-dev-215444-deployment",
-          "s3Key": "amplify-builds/createContact-58783871572f5573716b-build.zip"
+          "s3Key": "amplify-builds/createContact-47424264545a41484d31-build.zip"
+        },
+        "processPayment": {
+          "deploymentBucketName": "amplify-theevercake-dev-215444-deployment",
+          "s3Key": "amplify-builds/processPayment-53667854393978363161-build.zip"
         }
       }
     }

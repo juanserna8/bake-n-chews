@@ -5,10 +5,21 @@ export type AmplifyDependentResourcesAttributes = {
             "Arn": "string",
             "Region": "string",
             "LambdaExecutionRole": "string"
+        },
+        "processPayment": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
         }
     },
     "api": {
         "contacts": {
+            "RootUrl": "string",
+            "ApiName": "string",
+            "ApiId": "string"
+        },
+        "payments": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"
