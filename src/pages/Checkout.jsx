@@ -48,13 +48,15 @@ function Checkout(token) {
   }
 
   async function handleToken(token, addresses) {
-    //console.log({ token, addresses })
-    const response = await axios.post('http://localhost:5000/checkout', {
-      token,
-      stripeProducts
+    console.log({ token, addresses })
+    const response = await API.post('payments', '/register', {
+      body: {
+        token,
+        stripeProducts
+      }
     })
 
-    console.log(response.status)
+    console.log(response)
 
     if(response.status === 200) {
       toast("Success Payment is completed", {
