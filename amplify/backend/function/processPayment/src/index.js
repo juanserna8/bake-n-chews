@@ -48,7 +48,7 @@ exports.handler = async (event) => {
             Message: {
                 Body: {
                     Text: {
-                        Data: `Your order ${stripeProducts.description} has been processed.`
+                        Data: `Hi, ${<br />}Your order ${stripeProducts.description} has been processed.`
                     }
                 },
                 Subject: {
