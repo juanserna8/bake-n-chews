@@ -1,4 +1,6 @@
 const stripe = require('stripe')('sk_test_51La6UQAH1T8Fy7RTOHXwVc3c4t3Hj49fafPDYMtdQKWQ4eqhl1KPjAARKo3WDhB33jjRKk1zL5JT5ZszIcnuSRfK00XGVGMtIa')
+const AWS = require('aws-sdk');
+const SES = new AWS.SES({ region: "us-east-1" });
 
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
@@ -20,8 +22,6 @@ exports.handler = async (event) => {
         source: token.id
       })
 
-    //   const key = uuid()
-
       const charge = await stripe.charges.create({
         amount: Math.round((stripeProducts.price + Number.EPSILON) * 100),
         currency: "aud",
@@ -39,20 +39,35 @@ exports.handler = async (event) => {
             },
         },
         },
-        // {
-        //     key,
-        // }
         );
+        
+        const params = {
+            Destination: {
+                ToAddresses: [token.email],
+            },
+            Message: {
+                Body: {
+                    Text: {
+                        Data: `Your order ${stripeProducts.description} has been processed.`
+                    }
+                },
+                Subject: {
+                    Data: 'Order confirmation'
+                }, 
+            },
+            Source: "sernadominguezj@gmail.com"
+        };
 
     console.log("Charge:", { charge }, "Name", stripeProducts.description)
     status = "success"
+
+    const result = await SES.sendEmail(params).promise();
+    console.log(result)
 
     } catch (error) {
         console.log('error', error)
         status = "failure"
     }
-
-    // event.body.json({ error, status });
 
     return {
         statusCode: 200,

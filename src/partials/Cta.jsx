@@ -41,11 +41,11 @@ function Cta() {
         setPortions('');
         setFlavour('');
         setMessage('');
-        toast("Success Payment is completed", {
+        toast("Success, your request has been sent", {
           type: 'success'
         })
       } else {
-        toast("Failure Payment is not completed", {
+        toast("Failure, your request couldn't be processed", {
           type: 'error'
         })
       }
@@ -115,7 +115,7 @@ function Cta() {
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-5">
                   <div className="w-full px-3">
-                    <label className="block text-black text-sm mb-1" htmlFor="date">Date <span className="text-red-600">*</span></label>
+                    <label className="block text-black text-sm mb-1" htmlFor="date">When do you need the cake? (min. 5 days of notice) <span className="text-red-600">*</span></label>
                     <input onChange={(e) => setDate(e.target.value)} value={date} id="date" type="date" className="form-input w-full text-white" placeholder="Enter delivery date" required />
                   </div>
                 </div>
