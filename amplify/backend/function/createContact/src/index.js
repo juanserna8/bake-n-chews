@@ -30,6 +30,7 @@ exports.handler = async (event) => {
     // console.log(params)
     try {
         const result = await SES.sendEmail(params).promise();
+        // const result = await SES.sendEmail(params2).promise();
         console.log(result)
         return {
             statusCode: 200,

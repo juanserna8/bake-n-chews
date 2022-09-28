@@ -52,7 +52,8 @@ function Checkout(token) {
     const response = await API.post('payments', '/register', {
       body: {
         token,
-        stripeProducts
+        stripeProducts,
+        date: '28/10/2022'
       }
     })
 
