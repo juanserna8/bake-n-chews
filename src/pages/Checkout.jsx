@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { API } from 'aws-amplify';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
@@ -20,6 +22,8 @@ function Checkout(token) {
   const transF = (cartState.cartTotalAmount * 0.0175) + 0.3
   const total = cartState.cartTotalAmount + transF
 
+  
+  // The following lines of code is to send the stripe products object to the backend
   const products = cartSelector.map((cartItem, index) => {
     return {
       name: cartItem.name,
@@ -53,7 +57,7 @@ function Checkout(token) {
       body: {
         token,
         stripeProducts,
-        date: '28/10/2022'
+        date: selectedDate
       }
     })
 
@@ -71,6 +75,16 @@ function Checkout(token) {
   }
 
   const stripeStyle = {display: 'none'}
+
+
+  // Date-picker 
+  const [selectedDate, setSelectedDay] = useState(null)
+  const currentDate = new Date()
+  const minDate = currentDate.setDate(currentDate.getDate() + 5)
+
+  useEffect(() => {
+    console.log(selectedDate)
+  }, [selectedDate])
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus">
@@ -148,9 +162,26 @@ function Checkout(token) {
             <p className="text-black text-2xl text-center">${total.toFixed(2)}</p>
           </div>
 
-          
+          <div className='text-center mt-14 grid grid-cols-2'>
+            <div className='col-span-2 md:col-span-1 lg:ml-8'>
+              <p className="col-span-1 h4 text-black text-center">Select a delivery date</p>
+            </div>
+            <div className='col-span-2 md:col-span-1 md:-ml-16 mt-4 md:mt-0'>
+              <DatePicker 
+                placeholderText='Enter date'
+                selected={selectedDate}
+                onChange={date => setSelectedDay(date)}
+                // dateFormat='dd/MM/yyyy'
+                minDate={minDate}
+                showTimeSelect
+                dateFormat="dd/MM/yyyy p"
+                className='text-black text-center'
+              />
+            </div>
+          </div>
 
           {/* Stripe btn */}
+          {selectedDate !== null && (
           <div className='mt-12 text-center'>
             <StripeCheckout 
               stripeKey='pk_test_51La6UQAH1T8Fy7RT72W0uXcsFpg8yOyl4uVAekuHgMvnlH3FoohJ9AIZyOOknDXIQG6xWgw4ReVYlbloEa1gOMuD00tqTTVjMy'
@@ -164,6 +195,7 @@ function Checkout(token) {
               </button>
             </StripeCheckout>
           </div>
+          )}
 
           </motion.div>
         </section>
