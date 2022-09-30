@@ -3,6 +3,10 @@ import axios from 'axios';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { API } from 'aws-amplify';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import { useEffect } from 'react';
+
 
 function Cta() {
 
@@ -17,6 +21,14 @@ function Cta() {
   const [flavour, setFlavour] = useState("")
   const [message, setMessage] = useState("")
 
+  // Date-picker 
+  const currentDate = new Date()
+  // The order must be with min. 5 days in advance
+  const minDate = currentDate.setDate(currentDate.getDate() + 5)
+
+  // Convert the date to a string and then slice what you need to send to the customer
+  const dateToStr = date.toString("MMMM yyyy").slice(0, 15)
+
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -26,7 +38,7 @@ function Cta() {
           lastName: lastName,
           phone: phone,
           email: email,
-          date: date,
+          date: dateToStr,
           portions: portions,
           flavour: flavour,
           message: message
@@ -116,7 +128,20 @@ function Cta() {
                 <div className="flex flex-wrap -mx-3 mb-5">
                   <div className="w-full px-3">
                     <label className="block text-black text-sm mb-1" htmlFor="date">When do you need the cake? (min. 5 days of notice) <span className="text-red-600">*</span></label>
-                    <input onChange={(e) => setDate(e.target.value)} value={date} id="date" type="date" className="form-input w-full text-white" placeholder="Enter delivery date" required />
+                    {/* <input onChange={(e) => setDate(e.target.value)} value={date} id="date" type="date" className="form-input w-full text-white" placeholder="Enter delivery date" required /> */}
+                    <DatePicker 
+                      placeholderText='Enter date'
+                      selected={date}
+                      onChange={date => setDate(date)}
+                      minDate={minDate}
+                      dateFormat="dd/MM/yyyy"
+                      className='form-input w-full text-white'
+                      required
+                      type="date"
+                      popperPlacement="top-start"
+                    >
+                      <div style={{ color: "red", textAlign: "center" }}>Select your delivery date!</div>
+                    </DatePicker>
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-5">

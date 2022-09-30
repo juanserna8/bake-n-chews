@@ -57,7 +57,7 @@ function Checkout(token) {
       body: {
         token,
         stripeProducts,
-        date: selectedDate
+        date: dateToStr
       }
     })
 
@@ -74,6 +74,7 @@ function Checkout(token) {
     }
   }
 
+  // Don't show the style of stripe in order to maintain our website's style
   const stripeStyle = {display: 'none'}
 
 
@@ -82,9 +83,11 @@ function Checkout(token) {
   const currentDate = new Date()
   const minDate = currentDate.setDate(currentDate.getDate() + 5)
 
-  useEffect(() => {
-    console.log(selectedDate)
-  }, [selectedDate])
+  const dateToStr = selectedDate?.toString("MMMM yyyy").slice(0, 15)
+
+  // useEffect(() => {
+  //   console.log(dateToStr)
+  // }, [selectedDate])
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus">
@@ -166,17 +169,34 @@ function Checkout(token) {
             <div className='col-span-2 md:col-span-1 lg:ml-8'>
               <p className="col-span-1 h4 text-black text-center">Select a delivery date</p>
             </div>
-            <div className='col-span-2 md:col-span-1 md:-ml-16 mt-4 md:mt-0'>
+            <div className='col-span-2 md:col-span-1 md:-ml-16 mt-4 md:mt-0 md:mr-4' style={{ position: 'relative'}}>
               <DatePicker 
                 placeholderText='Enter date'
                 selected={selectedDate}
                 onChange={date => setSelectedDay(date)}
-                // dateFormat='dd/MM/yyyy'
                 minDate={minDate}
-                showTimeSelect
-                dateFormat="dd/MM/yyyy p"
+                dateFormat="dd/MM/yyyy"
                 className='text-black text-center'
-              />
+                popperPlacement="top-start"
+                popperModifiers={[
+                  // {
+                  //   name: "offset",
+                  //   options: {
+                  //     offset: [5, 10],
+                  //   },
+                  // },
+                  // {
+                  //   name: "preventOverflow",
+                  //   options: {
+                  //     rootBoundary: "viewport",
+                  //     tether: false,
+                  //     altAxis: true,
+                  //   },
+                  // },
+                ]}
+              >
+                <div style={{ color: "red" }}>Select your delivery date!</div>
+              </DatePicker>
             </div>
           </div>
 
