@@ -4,6 +4,9 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
+import { API } from 'aws-amplify';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
@@ -19,6 +22,8 @@ function Checkout(token) {
   const transF = (cartState.cartTotalAmount * 0.0175) + 0.3
   const total = cartState.cartTotalAmount + transF
 
+  
+  // The following lines of code is to send the stripe products object to the backend
   const products = cartSelector.map((cartItem, index) => {
     return {
       name: cartItem.name,
@@ -47,13 +52,16 @@ function Checkout(token) {
   }
 
   async function handleToken(token, addresses) {
-    //console.log({ token, addresses })
-    const response = await axios.post('http://localhost:5000/checkout', {
-      token,
-      stripeProducts
+    console.log({ token, addresses })
+    const response = await API.post('payments', '/register', {
+      body: {
+        token,
+        stripeProducts,
+        date: dateToStr
+      }
     })
 
-    console.log(response.status)
+    console.log(response)
 
     if(response.status === 200) {
       toast("Success Payment is completed", {
@@ -66,7 +74,20 @@ function Checkout(token) {
     }
   }
 
+  // Don't show the style of stripe in order to maintain our website's style
   const stripeStyle = {display: 'none'}
+
+
+  // Date-picker 
+  const [selectedDate, setSelectedDay] = useState(null)
+  const currentDate = new Date()
+  const minDate = currentDate.setDate(currentDate.getDate() + 5)
+
+  const dateToStr = selectedDate?.toString("MMMM yyyy").slice(0, 15)
+
+  // useEffect(() => {
+  //   console.log(dateToStr)
+  // }, [selectedDate])
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus">
@@ -144,9 +165,43 @@ function Checkout(token) {
             <p className="text-black text-2xl text-center">${total.toFixed(2)}</p>
           </div>
 
-          
+          <div className='text-center mt-14 grid grid-cols-2'>
+            <div className='col-span-2 md:col-span-1 lg:ml-8'>
+              <p className="col-span-1 h4 text-black text-center">Select a delivery date</p>
+            </div>
+            <div className='col-span-2 md:col-span-1 md:-ml-16 mt-4 md:mt-0 md:mr-4' style={{ position: 'relative'}}>
+              <DatePicker 
+                placeholderText='Enter date'
+                selected={selectedDate}
+                onChange={date => setSelectedDay(date)}
+                minDate={minDate}
+                dateFormat="dd/MM/yyyy"
+                className='text-black text-center'
+                popperPlacement="top-start"
+                popperModifiers={[
+                  // {
+                  //   name: "offset",
+                  //   options: {
+                  //     offset: [5, 10],
+                  //   },
+                  // },
+                  // {
+                  //   name: "preventOverflow",
+                  //   options: {
+                  //     rootBoundary: "viewport",
+                  //     tether: false,
+                  //     altAxis: true,
+                  //   },
+                  // },
+                ]}
+              >
+                <div style={{ color: "red" }}>Select your delivery date!</div>
+              </DatePicker>
+            </div>
+          </div>
 
           {/* Stripe btn */}
+          {selectedDate !== null && (
           <div className='mt-12 text-center'>
             <StripeCheckout 
               stripeKey='pk_test_51La6UQAH1T8Fy7RT72W0uXcsFpg8yOyl4uVAekuHgMvnlH3FoohJ9AIZyOOknDXIQG6xWgw4ReVYlbloEa1gOMuD00tqTTVjMy'
@@ -160,6 +215,7 @@ function Checkout(token) {
               </button>
             </StripeCheckout>
           </div>
+          )}
 
           </motion.div>
         </section>

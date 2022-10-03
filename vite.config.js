@@ -5,7 +5,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   define: {
-    'process.env': process.env
+    'process.env': process.env,
+    'global': {}
   },
   css: {
     postcss,
@@ -19,6 +20,9 @@ export default defineConfig({
           return val.replace(/^~/, "");
         },
       },
+      {
+        find: './runtimeConfig', replacement: './runtimeConfig.browser',
+      }
     ],
   },
   build: {

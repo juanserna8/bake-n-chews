@@ -5,6 +5,9 @@ import App from './App'
 import store from './store'
 import { Provider } from 'react-redux'
 import { getTotals } from './reducers/shoppingCartSlice'
+import Amplify from "aws-amplify"
+import awsExports from "./aws-exports"
+Amplify.configure(awsExports)
 
 store.dispatch(getTotals())
 
