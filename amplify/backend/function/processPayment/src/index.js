@@ -13,7 +13,7 @@ exports.handler = async (event) => {
     let error, status
     
     try{
-      const {stripeProducts, token, date} = JSON.parse(event.body)
+      const {stripeProducts, token, date, firstName, lastName, phone} = JSON.parse(event.body)
 
       console.log('Try token', token)
 
@@ -48,7 +48,7 @@ exports.handler = async (event) => {
             Message: {
                 Body: {
                     Text: {
-                        Data: `Your order ${stripeProducts.description} has been processed. ${date}`
+                        Data: `Hello ${firstName}, Your order ${stripeProducts.description} has been processed. ${date}`
                     }
                 },
                 Subject: {
