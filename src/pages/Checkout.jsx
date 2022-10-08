@@ -20,9 +20,9 @@ function Checkout(token) {
   const cartState = useSelector((state) => state.shoppingCart)
 
   // transaction fee
+  const cartTotalAmount = cartState.cartTotalAmount
   const transF = (cartState.cartTotalAmount * 0.0175) + 0.3
   const total = cartState.cartTotalAmount + transF
-
   
   // The following lines of code is to send the stripe products object to the backend
   const products = cartSelector.map((cartItem, index) => {
@@ -36,6 +36,10 @@ function Checkout(token) {
 
   const productNames = products.map((product) => {
     return product.name
+  })
+
+  useEffect(() => {
+    console.log(products)
   })
 
   const productNamesString = productNames.toString();
@@ -52,16 +56,19 @@ function Checkout(token) {
     description: productDescriptionsString
   }
 
+  //  Products y table se los paso a mi backend para generar la tabla. Ninguna de las opciones ha funcionado hasta ahora.
   async function handleToken(token, addresses) {
     console.log({ token, addresses })
     const response = await API.post('payments', '/register', {
       body: {
+        products,
+        cartTotalAmount,
         token,
         stripeProducts,
         date: dateToStr,
         firstName,
         lastName,
-        phone
+        phone,
       }
     })
 
@@ -94,10 +101,6 @@ function Checkout(token) {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [phone, setPhone] = useState("")
-
-  useEffect(() => {
-    console.log(firstName)
-  }, [firstName])
 
   return (
     <div className="flex flex-col min-h-screen overflow-hidden bg-generalYellow-100 font-marcellus">
