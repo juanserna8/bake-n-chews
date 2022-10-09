@@ -49,7 +49,7 @@ exports.handler = async (event) => {
         }).join('')
         // Create the table rows comming from products
         let productRows = products.map(product => {
-            return `<tr><td>${product.name}</td><td>${product.quantity}</td><td>$${product.price * product.quantity}</td></tr>`
+            return `<tr><td>${product.name + ' - ' + product.description}</td><td>${product.quantity}</td><td>$${product.price * product.quantity}</td></tr>`
         }).join('')
        
         // Calculate transaction fee 
@@ -57,6 +57,10 @@ exports.handler = async (event) => {
 
         // Calculate the total value to pay
         const totalAmount = cartTotalAmount + transF;
+
+        // Declare the current date
+        const currentDate = new Date()
+        const currentDateToString = currentDate.toString("MMMM yyyy").slice(0, 15)
         
         const params = {
             Destination: {
@@ -68,14 +72,29 @@ exports.handler = async (event) => {
                         Data: `Hello ${firstName}, Your order ${stripeProducts.description} has been processed. ${date}`
                     },
                     Html: {
-                        Data: `<html><head><title>Your order</title><style>*{margin:0; padding:0; box-sizing:border-box;} header{height: 65px; background-color:#FAF4EB; text-align:center; padding-top:13px;} div{margin-top: 20px; margin-bottom:20px; margin-left: 10px; margin-right: 10px;} h1{font-size:1.5rem;} table{width:400px;} th{text-align:center;} td{text-align:center;} table,th,td{border:1px solid #000; border-collapse:collapse;} th,td{padding-top: 10px; padding-bottom: 10px;} footer{margin-top:10px; height:75px; background-color:#FAF4EB; text-align:center; padding-top:8px; padding-bottom:8px;}</style></head><body><header><h1>Your order confirmation</h1></header><div><p><strong>Hello ${firstName}, </strong></p><br /> <p>Thanks for shopping with us. Please find below your order details:</p> <br /><table><tr>${tableTitles}</tr>${productRows}<tr><td colspan="2"><strong>Subtotal</strong></td><td>$${cartTotalAmount}</td></tr><tr><td colspan="2"><strong>Transaction fee</strong></td><td>$${transF}</td></tr><tr><td colspan="2"><h2><strong>Total</strong></h2></td><td><strong>$${totalAmount}</strong></td></tr></table> <br /><p>Your order will be delivered on ${date}</p><br /><p>Best regards, The Ever Cake</p></div><footer>The Ever Cake <br/>Copyright 2022<br/>Contact us: 0420449531</footer></body></html>`
+                        Data: `<html><head><title>Your order</title><style>*{margin:0; padding:0; box-sizing:border-box;} header{height: 65px; background-color:#D1CABF; text-align:center; padding-top:13px;} #containerFather{margin-top:0px; margin-bottom:0px; background-color:#FAF4EB;} #main{margin-top: 20px; margin-bottom:20px; margin-left: 10px; margin-right: 10px;} h1{font-size:1.5rem;} table{width:400px; margin-top:4px;} th{text-align:center;} td{text-align:center;} table,th,td{border:1px solid #000; border-collapse:collapse;} th,td{padding-top: 10px; padding-bottom: 10px;} img{display:block; margin-left:auto; margin-right:auto; width:25%;} footer{margin-top:10px; height:75px; background-color:#D1CABF; text-align:center; padding-top:8px; padding-bottom:8px;}</style></head><body><header><h1>Your order confirmation</h1></header><div id="containerFather"><div id="main"><p><strong>Hello ${firstName}, </strong></p><br /> <p>Thanks for shopping with us. Please find below your order details:</p> <br /><p>[Order #123456] (${currentDateToString})</p><table><tr>${tableTitles}</tr>${productRows}<tr><td colspan="2"><strong>Subtotal</strong></td><td>$${cartTotalAmount}</td></tr><tr><td colspan="2"><strong>Transaction fee</strong></td><td>$${transF.toFixed(2)}</td></tr><tr><td colspan="2"><h2><strong>Total</strong></h2></td><td><strong>$${totalAmount.toFixed(2)}</strong></td></tr></table> <br /><p>Your order will be delivered on ${date}</p><br /><p>Best regards,</p><p>The Ever Cake</p></div></div><footer>The Ever Cake <br/>Copyright 2022<br/>Contact us: 0420449531</footer></body></html>`
                     }
-                    // Html: {
-                    //     Data: `<html><head><title>Your order</title><style>*{margin:0; padding:0; box-sizing:border-box;} header{height: 65px; background-color:#FAF4EB; text-align:center; padding-top:8px;} main{margin-top:4px; margin-bottom:4px} h1{font-size:1.5rem;} footer{margin-top:8px; height:75px; background-color:#FAF4EB; text-align:center; padding-top:8px; padding-bottom:8px;}</style></head><body><header><h1>Your order confirmation</h1></header><main><h2><strong>Hello ${firstName}, </strong></h2><br /> <p>Thanks for shopping with us. Please find below your order details:</p> <br> <p><strong>Products</strong>${stripeProducts.description}</p><br /><div>${products.map((product, index) => product.name)}</div> <p>Your products will be delivered on ${date}</p><br /> <table><tr>${headers.map(head => <th>{head}</th>)}</tr><tr>${products.map(product => <td>{product.name}</td>)}</tr></table></main><footer>The Ever Cake <br/>Copyright 2022<br/>Contact us: 0420449531</footer></body></html>`
-                    // }
                 },
                 Subject: {
                     Data: 'Order confirmation'
+                }, 
+            },
+            Source: "sernadominguezj@gmail.com"
+        };
+
+
+        const params2 = {
+            Destination: {
+                ToAddresses: ['sernadominguezj@gmail.com'],
+            },
+            Message: {
+                Body: {
+                    Html: {
+                        Data: `<html><head><title>New order</title><style>*{margin:0; padding:0; box-sizing:border-box;} header{height: 65px; background-color:#D1CABF; text-align:center; padding-top:13px;} #containerFather{margin-top:0px; margin-bottom:0px; background-color:#FAF4EB;} #main{margin-top: 20px; margin-bottom:20px; margin-left: 10px; margin-right: 10px;} h1{font-size:1.5rem;} table{width:400px; margin-top:4px;} th{text-align:center;} td{text-align:center;} table,th,td{border:1px solid #000; border-collapse:collapse;} th,td{padding-top: 10px; padding-bottom: 10px;} img{display:block; margin-left:auto; margin-right:auto; width:25%;} footer{margin-top:10px; height:75px; background-color:#D1CABF; text-align:center; padding-top:8px; padding-bottom:8px;}</style></head><body><header><h1>New order</h1></header><div id="containerFather"><div id="main"><p><strong>Hello Andrea, </strong></p><br /> <p>The customer ${firstName} ${lastName} with contact number ${phone} and email address ${token.card.name} has placed an order. Please find below the order details:</p> <br /><p>[Order #123456] (${currentDateToString})</p><table><tr>${tableTitles}</tr>${productRows}<tr><td colspan="2"><strong>Subtotal</strong></td><td>$${cartTotalAmount}</td></tr><tr><td colspan="2"><strong>Transaction fee</strong></td><td>$${transF.toFixed(2)}</td></tr><tr><td colspan="2"><h2><strong>Total</strong></h2></td><td><strong>$${totalAmount.toFixed(2)}</strong></td></tr></table> <br /><p>The order must be delivered on ${date}.</p><br /><p>Best regards,</p><p>The Ever Cake</p></div></div><footer>The Ever Cake <br/>Copyright 2022<br/>Contact us: 0420449531</footer></body></html>`
+                    }
+                },
+                Subject: {
+                    Data: 'New order'
                 }, 
             },
             Source: "sernadominguezj@gmail.com"
@@ -85,7 +104,8 @@ exports.handler = async (event) => {
     status = "success"
 
     const result = await SES.sendEmail(params).promise();
-    console.log(result)
+    const result2 = await SES.sendEmail(params2).promise();
+    console.log(result, result2);
 
     } catch (error) {
         console.log('error', error)
