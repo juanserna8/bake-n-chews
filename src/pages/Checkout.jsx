@@ -38,10 +38,6 @@ function Checkout(token) {
     return product.name
   })
 
-  useEffect(() => {
-    console.log(products)
-  })
-
   const productNamesString = productNames.toString();
 
   const productDescriptions = products.map((product) => {
