@@ -135,13 +135,13 @@ module.exports = {
         98: '.98',
       },
       animation: {
-        float: 'float 5s ease-in-out infinite',
+        float: 'float 1s ease-in-out',
         beat: 'beat 4.5s ease-out infinite'
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10%)' },
+          '50%': { transform: 'translateY(-5%)' },
         },
         beat: {
           '0%, 100%': {transform: 'scale(1)'},
