@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import andrea from '../../dist/images/andrea.png';
-import title from '../../dist/images/title.png';
+import andrea from '/dist/images/andrea.png';
+import title from '/dist/images/title.png';
+// import title from '../../dist/images/title.png';
+// import uzmi from '/dist//images/andrea.png';
+
 
 import logo from '/images/logo.png'
 
