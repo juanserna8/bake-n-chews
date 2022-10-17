@@ -8,9 +8,9 @@ import Stand from "/images/stand.webp";
 import Coffee from "/images/coffee.webp";
 import Wood from "/images/wood.webp"
 import Bake from "/images/bake.webp"
-import cake1 from "../../dist/images/cake1.png"
-import cake2 from "../../dist/images/cake2.png"
-import cake3 from "../../dist/images/cake3.png"
+import cake1 from "/images/cake1.png"
+import cake2 from "/images/cake2.png"
+import cake3 from "/images/cake3.png"
 import { useState } from 'react';
 
 function BusinessDescription() {
