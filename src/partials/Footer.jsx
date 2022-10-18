@@ -64,7 +64,7 @@ function Footer() {
                 </ul>
 
                 {/* Copyrights note */}
-                <div className="text-gray-600 dark:text-gray-400 text-sm mr-4">&copy; 2022. All rights reserved.</div>
+                <div className="text-gray-600 dark:text-gray-400 text-sm mr-4">&copy; 2022 <a href='https://www.linkedin.com/in/jdserna/' target="_blank">Juan Serna</a>. All rights reserved.</div>
 
             </div>
 

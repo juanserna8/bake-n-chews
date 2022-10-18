@@ -148,6 +148,9 @@ function Cta() {
                   <div className="w-full px-3">
                     <label className="block text-black text-sm mb-1" htmlFor="portions">Number of portions <span className="text-red-600">*</span></label>
                     <input onChange={(e) => setPortions(e.target.value)} value={portions} id="portions" type="number" className="form-input w-full text-white" placeholder="Number of portions (min 15)" required />
+                    {(portions != "" && portions < 15) && (
+                      <p className='text-red-500'>Please select a minimum of 15 portions</p>
+                    )}
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-5">
